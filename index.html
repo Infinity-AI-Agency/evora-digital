@@ -1,71 +1,930 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0e1014"><meta name="description" content="ÉVORA — Digital Invitation Atelier. Invitaciones digitales extraordinarias para bodas, cumpleaños, XV años y ocasiones especiales.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0d10">
+<meta name="description" content="ÉVORA — Digital Invitation Atelier. Invitaciones digitales a la medida para bodas, XV años, cumpleaños y ocasiones que merecen una entrada inolvidable.">
 <title>ÉVORA | Digital Invitation Atelier</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#0e1014;--panel:#191c22;--panel2:#24272e;--gold:#d8ba80;--text:#f3eee5;--muted:#a7a6aa;--line:#ffffff1c;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--pad:clamp(18px,5vw,80px)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.6}button,input,select,textarea{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer;color:inherit}button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05}img{display:block;width:100%}[hidden]{display:none!important}.wrap{max-width:1560px;margin:auto;padding-inline:var(--pad)}.eyebrow{font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}.muted{color:var(--muted)}.btn{border:1px solid var(--gold);border-radius:6px;padding:12px 20px;min-height:45px;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:var(--bg);font-size:12px;font-weight:700;transition:.2s}.btn:hover{transform:translateY(-2px);background:#eed3a0}.btn.alt{background:#ffffff12;color:var(--text);border-color:#ffffff30}.btn.alt:hover{background:#ffffff20}.btn.outline{color:var(--gold);background:transparent}.header{position:sticky;top:0;background:#0e1014eb;border-bottom:1px solid var(--line);backdrop-filter:blur(16px);z-index:30}.nav{display:flex;min-height:76px;align-items:center;gap:35px}.brand{font-family:var(--serif);font-size:35px;letter-spacing:.15em;white-space:nowrap}.brand:before{content:'◇';font-family:serif;font-size:23px;color:var(--gold);margin-right:10px}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:12px}.navlinks a:hover,.footer a:hover{color:var(--gold)}.navright{margin-left:auto;display:flex;gap:12px;align-items:center}.linkbutton{background:none;border:0;color:var(--gold);font-size:12px;white-space:nowrap}.hamburger{display:none;background:none;border:1px solid var(--line);border-radius:5px;padding:7px 12px;font-size:18px}.mobilemenu{padding:16px var(--pad);border-top:1px solid var(--line);display:flex;gap:16px;flex-wrap:wrap;font-size:12px}.hero{min-height:610px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 77% 40%,#515047 0%,#202326 37%,#0e1014 78%)}.heroimg{position:absolute;inset:0 0 0 auto;width:60%;height:100%;object-fit:cover;object-position:center}.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0e1014 0%,#0e1014f5 28%,#0e101480 67%,#0e101440),linear-gradient(0deg,#0e1014 0%,transparent 45%)}.herocontent{position:relative;z-index:1;padding-block:90px;width:100%}.herocopy{max-width:540px}.hero h1{font-size:clamp(49px,6vw,83px);margin:19px 0 20px;letter-spacing:-.02em}.hero h1 em{color:var(--gold)}.hero p.desc{color:#cdcad0;max-width:410px;font-size:15px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.heronote{font-size:10px;letter-spacing:.09em;color:var(--muted);margin-top:27px}.herofoot{font-size:11px;color:var(--gold);margin-top:25px}.disclaimer{margin-block:24px;padding:18px 22px;background:var(--panel);border:1px solid var(--line);border-radius:8px}.disclaimer p:last-child{color:var(--muted);font-size:11px;margin-top:5px}.tools{display:flex;justify-content:space-between;gap:18px;padding-block:12px 24px;align-items:center}.filters{display:flex;gap:8px;overflow:auto;scrollbar-width:none}.filter{background:var(--panel);border:1px solid var(--line);color:var(--text);padding:9px 17px;border-radius:28px;font-size:12px;white-space:nowrap}.filter[aria-pressed=true]{background:var(--gold);color:var(--bg);border-color:var(--gold)}.searchbox{display:flex;align-items:center;gap:10px;border-bottom:1px solid #ffffff40;min-width:225px}.searchbox input{background:transparent;color:var(--text);border:0;width:100%;padding:10px 2px;outline:0}.collection{padding-top:16px;padding-bottom:34px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.sectionhead h2{font-size:clamp(30px,3.2vw,39px);margin-top:4px}.counter{font:500 13px var(--sans);color:var(--gold)}.scrollbtn{height:34px;width:34px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);font-size:18px}.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 54px)/4);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 15px}.carousel::-webkit-scrollbar{display:none}.card{min-width:0;scroll-snap-align:start}.cover{aspect-ratio:4/3;position:relative;border-radius:9px;background:var(--panel);overflow:hidden;border:1px solid var(--line)}.cover img{width:100%;height:100%;object-fit:cover;transition:transform .35s}.card:hover .cover img{transform:scale(1.06)}.fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding:18px;gap:10px;background:radial-gradient(ellipse at top,#ffffff16,transparent 75%),var(--fallback-bg,#252831)}.fallback .ornament{font:70px var(--serif);color:var(--fallback-ink,var(--gold));line-height:.9}.fallback .name{font:34px var(--serif);color:var(--fallback-ink,var(--gold))}.cover:has(img:not([hidden])) .fallback{display:none}.shade{position:absolute;inset:35% 0 0;pointer-events:none;background:linear-gradient(0deg,#0b0d14ef,transparent)}.covername{position:absolute;bottom:16px;left:17px;right:15px;pointer-events:none}.covername .type{display:block;font-size:9px;letter-spacing:.13em;color:var(--gold)}.covername strong{font:400 clamp(23px,2.5vw,35px)/1.05 var(--serif)}.cover .flag{position:absolute;left:10px;top:10px;background:#0e1014d9;border:1px solid #ffffff35;color:var(--gold);padding:4px 8px;font-size:9px;border-radius:4px;pointer-events:none}.cover .heart{position:absolute;right:10px;top:10px;border:1px solid #ffffff45;border-radius:50%;width:36px;height:36px;background:#0e1014df;font-size:21px;z-index:3;display:grid;place-items:center}.heart[aria-pressed=true]{background:var(--gold);color:var(--bg)}.viewcard{position:absolute;inset:0;border:0;background:transparent;z-index:2;font-size:0}.cardinfo{margin-top:12px;display:flex;justify-content:space-between;gap:10px}.cardinfo h3{font:600 13px var(--sans)}.cardinfo p{font-size:10px;color:var(--muted);margin-top:3px}.detail{border:0;background:none;font-size:21px;color:var(--gold)}.emptyfav{border:1px dashed #d8ba8040;border-radius:8px;padding:20px 24px;color:var(--muted);font-size:12px}.emptyfav span{font-size:27px;color:var(--gold);display:block}.nodata{padding:45px;text-align:center;color:var(--muted)}.nodata h2{font-size:33px;color:var(--text);margin-bottom:12px}.categoryarea{padding-bottom:30px}.section{padding-block:60px}.intro{max-width:730px}.intro h2{font-size:clamp(39px,4vw,53px);margin:10px 0 16px}.intro p:last-child{color:var(--muted)}.benefits,.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}.benefit,.plan{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:27px}.benefit h3{font-size:30px;margin:12px 0}.benefit p,.plan p{font-size:12px;color:var(--muted)}.plan{display:flex;flex-direction:column}.plan.feature{border-color:#d8ba806a;background:linear-gradient(135deg,#d8ba800d,transparent 55%),var(--panel)}.plan h3{font-size:41px;margin:14px 0}.plan ul{padding-left:18px;font-size:12px;line-height:2;color:var(--muted);margin:19px 0 25px}.plan .btn{margin-top:auto}.addons{padding:22px;margin-top:22px;background:var(--panel);border:1px solid var(--line);border-radius:9px}.addons p{font-size:12px;color:var(--muted)}.addons .btn{margin-top:15px}.request{background:var(--panel);border-top:1px solid var(--line)}.request form{margin-top:28px}.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:11px;color:var(--gold)}.field input,.field textarea,.field select{width:100%;min-width:0;border:1px solid #ffffff22;background:var(--bg);color:var(--text);border-radius:6px;padding:13px 14px;font-size:13px;min-height:46px}.field textarea{min-height:125px;resize:vertical}.hint{font-size:11px;color:var(--muted);margin-top:12px}.checkgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-block:15px 25px}.checkgrid label{display:flex;gap:8px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;font-size:11px}.checkgrid input{accent-color:var(--gold)}.footer{display:flex;align-items:center;justify-content:space-between;gap:25px;padding-block:35px}.footer p{font-size:10px;color:var(--muted)}.infinity{border:1px solid #d8ba803f;border-radius:7px;padding:12px 19px;display:flex;align-items:center;gap:11px}.infinity .symbol{font:36px var(--serif);color:var(--gold)}.infinity strong{font-size:12px}.infinity small{display:block;font-size:9px;color:var(--muted)}dialog{max-width:760px;width:calc(100% - 28px);max-height:90dvh;overflow:auto;border:1px solid #d8ba8055;background:var(--panel);color:var(--text);border-radius:12px;padding:0}dialog::backdrop{background:#05070be5;backdrop-filter:blur(7px)}.modalhero{height:280px;background:#28252a;position:relative}.modalhero img{height:100%;object-fit:cover}.modalbody{padding:28px}.modalbody h2{font-size:43px;margin:12px 0}.modalbody p{font-size:13px;color:var(--muted)}.close{position:absolute;z-index:5;right:12px;top:12px;background:#0e1014e0;color:white;border:1px solid #ffffff35;border-radius:50%;width:36px;height:36px}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:90;background:var(--gold);color:#101014;padding:12px 20px;border-radius:8px;font-size:12px;box-shadow:0 10px 35px #0008;text-align:center;max-width:90vw}.shareicon{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.skip{position:absolute;top:-70px;left:12px;background:var(--gold);color:#111;padding:10px;z-index:99}.skip:focus{top:12px}
-@media(max-width:1000px){.navlinks{gap:13px}.carousel{grid-auto-columns:calc((100% - 36px)/3)}.checkgrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:760px){.nav{min-height:68px}.brand{font-size:28px}.navlinks{display:none}.hamburger{display:block}.navright .linkbutton{font-size:11px}.hero{min-height:610px;align-items:end}.heroimg{width:100%;height:68%;top:0;object-position:center top}.hero:after{background:linear-gradient(0deg,#0e1014 1%,#0e1014 11%,#0e1014ef 31%,#0e10143a 75%)}.herocontent{padding-top:255px;padding-bottom:35px}.hero h1{font-size:49px}.hero p.desc{font-size:13px}.tools{display:block}.searchbox{margin-top:15px}.filters{margin-right:calc(-1*var(--pad));padding-right:var(--pad)}.carousel{grid-auto-columns:44%;gap:12px;margin-right:calc(-1*var(--pad));padding-right:var(--pad)}.cover{aspect-ratio:3/4}.covername strong{font-size:26px}.cardinfo h3{font-size:11px}.cardinfo p{font-size:9px}.benefits,.plans{grid-template-columns:1fr}.section{padding-block:40px}.fields{grid-template-columns:1fr}.checkgrid{grid-template-columns:repeat(2,1fr)}.footer{flex-direction:column;align-items:flex-start}.modalhero{height:220px}.modalbody{padding:23px}.modalbody h2{font-size:35px}.actions .btn{padding:11px 15px}.collection{padding-bottom:20px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+/* ======================================================================
+   ÉVORA — Digital Invitation Atelier
+   Hoja de estilos organizada por secciones. Los colores y tipografías
+   viven todos en :root, así que para ajustar la marca basta con tocar
+   esta primera parte.
+   ====================================================================== */
+
+:root{
+  /* Paleta */
+  --ink:        #0c0d10;   /* fondo principal, negro cálido */
+  --panel:      #17191e;   /* tarjetas, cabecera */
+  --panel-2:    #1f222a;   /* elementos sobre el panel (inputs, chips) */
+  --line:       rgba(255,255,255,0.09);
+
+  --gold:       #c9a567;   /* acento principal, dorado champán */
+  --gold-soft:  rgba(201,165,103,0.14);
+  --wine:       #5c2430;   /* acento secundario, vino — enlaza con Royal Burgundy / Promesa de Plata */
+
+  --text:       #f3efe8;   /* texto principal */
+  --muted:      #a79fa0;   /* texto secundario, gris con tinte cálido */
+
+  /* Tipografía */
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', Arial, sans-serif;
+
+  /* Layout */
+  --pad: clamp(20px, 5vw, 72px);
+  --radius: 14px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; scroll-padding-top: 88px; }
+body{
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3{ font-family: var(--serif); font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; }
+p{ margin: 0; }
+a{ color: inherit; text-decoration: none; }
+button,input,select,textarea{ font: inherit; color: inherit; }
+button{ cursor: pointer; background: none; border: 0; }
+button:disabled{ cursor: not-allowed; opacity: .5; }
+img{ display: block; width: 100%; }
+[hidden]{ display: none !important; }
+:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce){ *,*::before,*::after{ transition: none !important; scroll-behavior: auto !important; } }
+
+.wrap{ max-width: 1240px; margin: 0 auto; padding-inline: var(--pad); }
+.eyebrow{ font: 700 10.5px var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.muted{ color: var(--muted); }
+
+/* Botones -------------------------------------------------------------- */
+.btn{
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 12px 22px; border-radius: 999px;
+  font: 700 12.5px var(--sans); letter-spacing: .02em;
+  background: var(--gold); color: #1c1407; border: 1px solid var(--gold);
+  transition: transform .18s ease, background .18s ease;
+}
+.btn:hover{ transform: translateY(-2px); background: #ddc08c; }
+.btn.outline{ background: transparent; color: var(--gold); }
+.btn.outline:hover{ background: var(--gold-soft); }
+.btn.ghost{ background: rgba(255,255,255,0.05); color: var(--text); border-color: var(--line); }
+.btn.ghost:hover{ background: rgba(255,255,255,0.09); }
+
+/* Skip link -------------------------------------------------------------- */
+.skip{ position: absolute; top: -70px; left: 12px; background: var(--gold); color: #1c1407; padding: 10px 14px; border-radius: 8px; z-index: 99; }
+.skip:focus{ top: 12px; }
+
+/* ----------------------------------------------------------------------
+   Encabezado
+   ---------------------------------------------------------------------- */
+.site-header{
+  position: sticky; top: 0; z-index: 30;
+  background: rgba(12,13,16,0.9); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.nav{ display: flex; align-items: center; gap: 32px; min-height: 78px; }
+.brand{ font: 400 30px var(--serif); letter-spacing: .14em; white-space: nowrap; }
+.brand::before{ content: '◇'; color: var(--gold); margin-right: 10px; font-size: .7em; }
+.nav-links{ display: flex; gap: 22px; font-size: 12.5px; color: var(--muted); }
+.nav-links a:hover{ color: var(--gold); }
+.nav-right{ margin-left: auto; display: flex; align-items: center; gap: 14px; }
+.fav-toggle{ font-size: 12.5px; color: var(--gold); white-space: nowrap; }
+.menu-btn{ display: none; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 18px; }
+.mobile-menu{ padding: 16px var(--pad); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+
+@media (max-width: 760px){
+  .nav-links{ display: none; }
+  .menu-btn{ display: block; }
+}
+
+/* ----------------------------------------------------------------------
+   Hero
+   ---------------------------------------------------------------------- */
+.hero{
+  position: relative; overflow: hidden; min-height: 86vh;
+  display: flex; align-items: center;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(92,36,48,0.35), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 15% 85%, rgba(201,165,103,0.10), transparent 65%),
+    var(--ink);
+}
+.hero-grid{ display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; width: 100%; padding-block: 64px; }
+.hero h1{ font-size: clamp(42px, 6vw, 80px); margin: 18px 0 20px; letter-spacing: -.01em; }
+.hero h1 em{ font-style: italic; color: var(--gold); }
+.hero p.lead{ max-width: 46ch; color: #cfc9cb; font-size: 16px; line-height: 1.7; }
+.hero-actions{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+.hero-note{ margin-top: 26px; font: 700 10.5px var(--sans); letter-spacing: .14em; color: var(--muted); text-transform: uppercase; }
+
+.hero-card{
+  background: var(--panel); border: 1px solid var(--line); border-radius: 20px;
+  overflow: hidden; box-shadow: 0 30px 70px -30px rgba(0,0,0,0.65);
+}
+.hero-card img{ aspect-ratio: 3/4; object-fit: cover; }
+.hero-card-foot{ padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.hero-card-foot strong{ font: 400 17px var(--serif); }
+.hero-card-foot span{ display: block; font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+@media (max-width: 860px){
+  .hero-grid{ grid-template-columns: 1fr; padding-block: 44px; }
+  .hero-card{ max-width: 320px; margin-inline: auto; }
+}
+
+/* ----------------------------------------------------------------------
+   Franja de confianza (honesta: sin cifras inventadas)
+   ---------------------------------------------------------------------- */
+.trust{ border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--panel); }
+.trust ul{ list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4,1fr); }
+.trust li{ padding: 26px var(--pad); border-right: 1px solid var(--line); }
+.trust li:last-child{ border-right: 0; }
+.trust li strong{ display: block; font: 400 18px var(--serif); margin-bottom: 4px; }
+.trust li span{ font-size: 12px; color: var(--muted); }
+@media (max-width: 860px){
+  .trust ul{ grid-template-columns: repeat(2,1fr); }
+  .trust li:nth-child(2){ border-right: 0; }
+  .trust li{ border-bottom: 1px solid var(--line); }
+}
+
+/* ----------------------------------------------------------------------
+   Catálogo
+   ---------------------------------------------------------------------- */
+.disclaimer{
+  margin-top: 28px; padding: 16px 20px; background: var(--panel);
+  border: 1px solid var(--line); border-radius: var(--radius); font-size: 12.5px;
+}
+.disclaimer strong{ color: var(--gold); }
+
+.catalog-tools{ display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; padding-block: 22px; }
+.filters{ display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+.filters::-webkit-scrollbar{ display: none; }
+.filter-chip{
+  border: 1px solid var(--line); background: var(--panel); color: var(--text);
+  padding: 9px 18px; border-radius: 999px; font-size: 12.5px; white-space: nowrap;
+}
+.filter-chip[aria-pressed="true"]{ background: var(--gold); border-color: var(--gold); color: #1c1407; font-weight: 700; }
+.search-box{ display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--line); min-width: 220px; padding: 8px 2px; }
+.search-box input{ background: transparent; border: 0; width: 100%; outline: 0; color: var(--text); }
+
+.collection{ padding-block: 10px 30px; }
+.collection-head{ display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; margin-bottom: 18px; }
+.collection-head h2{ font-size: clamp(26px, 3vw, 34px); }
+.collection-head .eyebrow{ display: block; margin-bottom: 6px; }
+.scroll-btn{ width: 34px; height: 34px; border-radius: 50%; background: var(--panel-2); border: 1px solid var(--line); font-size: 17px; }
+
+.carousel{ display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 3 * 18px) / 4); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 2px 10px; }
+.carousel::-webkit-scrollbar{ display: none; }
+.card{ scroll-snap-align: start; }
+
+.card-cover{ position: relative; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; background: var(--panel-2); border: 1px solid var(--line); }
+.card-cover img{ width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.card:hover .card-cover img{ transform: scale(1.05); }
+
+/* Vista de respaldo cuando no hay foto real (y para los temas con
+   personajes con derechos de autor, a propósito no usamos su arte) */
+.card-fallback{
+  position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 10px; padding: 20px;
+  background:
+    radial-gradient(ellipse at top, rgba(255,255,255,0.08), transparent 70%),
+    var(--fb-bg, var(--panel-2));
+}
+.card-fallback .mark{ font: 60px var(--serif); color: var(--fb-ink, var(--gold)); line-height: 1; opacity: .9; }
+.card-fallback .name{ font: 400 26px var(--serif); color: var(--fb-ink, var(--text)); }
+.card-cover:has(img:not([hidden])) .card-fallback{ display: none; }
+
+.card-shade{ position: absolute; inset: 40% 0 0; background: linear-gradient(0deg, rgba(5,6,8,0.92), transparent); pointer-events: none; }
+.card-label{ position: absolute; left: 16px; right: 14px; bottom: 14px; pointer-events: none; }
+.card-label .type{ display: block; font: 700 9px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+.card-label strong{ font: 400 clamp(20px,2.4vw,27px) var(--serif); }
+.card-flag{ position: absolute; top: 10px; left: 10px; background: rgba(12,13,16,0.85); border: 1px solid var(--line); color: var(--gold); padding: 4px 9px; border-radius: 5px; font: 700 9px var(--sans); letter-spacing: .08em; }
+.card-heart{
+  position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(12,13,16,0.85); border: 1px solid var(--line); display: grid; place-items: center; font-size: 19px; z-index: 2;
+}
+.card-heart[aria-pressed="true"]{ background: var(--gold); color: #1c1407; border-color: var(--gold); }
+.card-open{ position: absolute; inset: 0; z-index: 1; font-size: 0; }
+
+.card-info{ margin-top: 11px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.card-info h3{ font: 500 14.5px var(--sans); }
+.card-info p{ font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+.card-detail{ font-size: 18px; color: var(--gold); flex-shrink: 0; }
+
+/* Estado "próximamente" para categorías sin demo todavía */
+.coming-soon{
+  border: 1px dashed var(--line); border-radius: var(--radius); padding: 34px 28px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.coming-soon .mark{ font: 40px var(--serif); color: var(--gold); }
+.coming-soon h3{ font-size: 20px; margin-bottom: 4px; }
+.coming-soon p{ color: var(--muted); font-size: 13px; max-width: 44ch; }
+
+.empty-fav{ border: 1px dashed var(--line); border-radius: var(--radius); padding: 20px 24px; color: var(--muted); font-size: 12.5px; }
+.empty-fav span{ display: block; font-size: 26px; color: var(--gold); margin-bottom: 6px; }
+
+.no-results{ text-align: center; padding: 50px 20px; color: var(--muted); }
+.no-results h2{ font-size: 30px; color: var(--text); margin-bottom: 10px; }
+
+/* ----------------------------------------------------------------------
+   Secciones de contenido (proceso / paquetes)
+   ---------------------------------------------------------------------- */
+.section{ padding-block: 64px; border-top: 1px solid var(--line); }
+.section .intro{ max-width: 680px; margin-bottom: 36px; }
+.section .intro h2{ font-size: clamp(32px, 4vw, 46px); margin: 10px 0 14px; }
+.section .intro p{ color: var(--muted); font-size: 15px; }
+
+.process{ display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; counter-reset: step; }
+.process li{ list-style: none; counter-increment: step; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.process li::before{ content: counter(step, decimal-leading-zero); display: block; font: 400 30px var(--serif); color: var(--gold); margin-bottom: 10px; }
+.process li h3{ font: 600 14px var(--sans); margin-bottom: 6px; }
+.process li p{ font-size: 12.5px; color: var(--muted); }
+
+.plans{ display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; max-width: 820px; }
+.plan{ background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; }
+.plan.feature{ border-color: rgba(201,165,103,0.45); background: linear-gradient(145deg, var(--gold-soft), transparent 55%), var(--panel); }
+.plan h3{ font-size: 32px; margin: 12px 0 8px; }
+.plan > p{ font-size: 13px; color: var(--muted); }
+.plan ul{ margin: 18px 0 24px; padding-left: 18px; font-size: 12.5px; line-height: 2; color: var(--muted); }
+.plan .btn{ margin-top: auto; }
+
+.addons{ margin-top: 22px; padding: 22px 24px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+.addons p{ font-size: 13px; color: var(--muted); max-width: 54ch; }
+
+@media (max-width: 860px){
+  .process{ grid-template-columns: 1fr 1fr; }
+  .plans{ grid-template-columns: 1fr; }
+}
+
+/* ----------------------------------------------------------------------
+   Formulario de solicitud
+   ---------------------------------------------------------------------- */
+.request{ background: var(--panel); }
+.request form{ margin-top: 28px; }
+.fields{ display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 16px; }
+.fields.two{ grid-template-columns: 1fr 1fr; }
+.field{ display: flex; flex-direction: column; gap: 7px; }
+.field label{ font-size: 11px; color: var(--gold); font-weight: 600; }
+.field input, .field select, .field textarea{
+  width: 100%; background: var(--ink); border: 1px solid var(--line); color: var(--text);
+  border-radius: 8px; padding: 13px 14px; font-size: 13.5px; min-height: 46px;
+}
+.field textarea{ min-height: 120px; resize: vertical; }
+.check-grid{ display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; margin: 16px 0 26px; }
+.check-grid label{ display: flex; gap: 8px; align-items: center; background: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 12px; font-size: 11.5px; }
+.check-grid input{ accent-color: var(--gold); }
+.hint{ font-size: 11.5px; color: var(--muted); margin-top: 12px; }
+@media (max-width: 760px){ .fields, .fields.two{ grid-template-columns: 1fr; } .check-grid{ grid-template-columns: 1fr 1fr; } }
+
+/* ----------------------------------------------------------------------
+   Footer
+   ---------------------------------------------------------------------- */
+.site-footer{ padding-block: 36px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.site-footer p{ font-size: 11px; color: var(--muted); margin-top: 6px; }
+.lab-credit{ border: 1px solid rgba(201,165,103,0.25); border-radius: 8px; padding: 12px 18px; display: flex; align-items: center; gap: 11px; }
+.lab-credit .mark{ font: 34px var(--serif); color: var(--gold); }
+.lab-credit strong{ font-size: 12px; display: block; }
+.lab-credit small{ font-size: 9px; color: var(--muted); letter-spacing: .06em; }
+
+/* ----------------------------------------------------------------------
+   Modales y toast
+   ---------------------------------------------------------------------- */
+dialog{ max-width: 760px; width: calc(100% - 28px); max-height: 90dvh; overflow: auto; border: 1px solid rgba(201,165,103,0.3); background: var(--panel); color: var(--text); border-radius: 16px; padding: 0; }
+dialog::backdrop{ background: rgba(4,4,6,0.9); backdrop-filter: blur(8px); }
+.modal-hero{ height: 280px; position: relative; background: var(--panel-2); }
+.modal-hero img{ height: 100%; object-fit: cover; }
+.modal-body{ padding: 30px; }
+.modal-body h2{ font-size: 40px; margin: 10px 0; }
+.modal-body p{ color: var(--muted); font-size: 13.5px; }
+.modal-close{ position: absolute; z-index: 5; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: rgba(12,13,16,0.85); border: 1px solid var(--line); color: var(--text); font-size: 18px; }
+.modal-actions{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+.toast{ position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 90; background: var(--gold); color: #1c1407; padding: 12px 22px; border-radius: 999px; font-size: 12.5px; font-weight: 600; box-shadow: 0 14px 34px rgba(0,0,0,0.5); max-width: 90vw; text-align: center; }
+
+@media (max-width: 600px){
+  .collection-head .scroll-btn{ display: none; }
+  .carousel{ grid-auto-columns: 62%; gap: 14px; margin-right: calc(-1 * var(--pad)); padding-right: var(--pad); }
+  .trust li{ padding: 20px var(--pad); }
+  .modal-hero{ height: 220px; }
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#catalogo">Ir al catálogo</a>
-<header class="header"><nav class="wrap nav" aria-label="Principal"><a class="brand" href="#inicio">ÉVORA</a><div class="navlinks"><a href="#catalogo">Explorar</a><a href="#catalogo" data-jump="bodas">Bodas</a><a href="#catalogo" data-jump="xv">XV años</a><a href="#catalogo" data-jump="infantiles">Infantiles</a><a href="#paquetes">Paquetes</a></div><div class="navright"><button id="goFav" class="linkbutton" type="button">♡ Mi selección <span id="favoriteCount">0/15</span></button><button class="hamburger" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button></div></nav><div id="mobileMenu" class="mobilemenu" hidden><a href="#catalogo">Explorar</a><a href="#catalogo" data-jump="bodas">Bodas</a><a href="#catalogo" data-jump="infantiles">Infantiles</a><a href="#catalogo" data-jump="juveniles">Juveniles</a><a href="#catalogo" data-jump="bautizos">Bautizos</a><a href="#paquetes">Paquetes</a><a href="#solicitud">Crear mi invitación</a></div></header>
-<main><section id="inicio" class="hero"><img class="heroimg" src="https://raw.githubusercontent.com/Infinity-AI-Agency/Promesa-de-plata/main/hero.jpg" alt="Promesa de plata — portada de invitación" onerror="this.style.opacity=0"><div class="wrap herocontent"><div class="herocopy"><p class="eyebrow">ÉVORA ATELIER / INVITACIONES DIGITALES</p><h1>Tu historia merece<br>una entrada<br><em>inolvidable.</em></h1><p class="desc">No enviamos invitaciones. Creamos la primera emoción de tu evento.</p><div class="actions"><a class="btn" href="https://infinity-ai-agency.github.io/Promesa-de-plata/" target="_blank" rel="noopener noreferrer">▷ Ver invitación</a><button class="btn alt" type="button" id="heroSave">♡ Guardar</button></div><p class="heronote">PERSONALIZABLE · MÚSICA · CONFIRMACIÓN DE ASISTENCIA</p><p class="herofoot">EN PORTADA / Promesa de plata · Bodas de plata</p></div></div></section>
-<div class="wrap"><div class="disclaimer"><p class="eyebrow">Catálogo de demostración</p><p>Los nombres, fechas, ubicaciones y demás datos de las invitaciones son ficticios. Las invitaciones son muestras para inspirar tu proyecto. Las propuestas señaladas como «Concepto» todavía no tienen demostración disponible.</p></div></div>
-<section id="catalogo" aria-label="Catálogo"><div class="wrap tools"><div class="filters" id="filters"><button class="filter" data-filter="all" aria-pressed="true">Para ti</button><button class="filter" data-filter="bodas" aria-pressed="false">Bodas</button><button class="filter" data-filter="xv" aria-pressed="false">XV años</button><button class="filter" data-filter="infantiles" aria-pressed="false">Infantiles</button><button class="filter" data-filter="juveniles" aria-pressed="false">Juveniles</button><button class="filter" data-filter="bautizos" aria-pressed="false">Bautizos</button></div><label class="searchbox"><span style="color:var(--gold)">⌕</span><input type="search" id="search" aria-label="Buscar invitación" placeholder="Buscar una invitación"></label></div>
-<section class="wrap collection" id="myFavorites"><div class="sectionhead"><div><p class="eyebrow">TU COLECCIÓN PERSONAL</p><h2>Mis favoritos <span class="counter" id="favCount">0/15</span></h2></div><div><button class="scrollbtn" data-scroll="favorites" data-dir="-1" aria-label="Anterior">‹</button> <button class="scrollbtn" data-scroll="favorites" data-dir="1" aria-label="Siguiente">›</button></div></div><div class="carousel" id="favorites" hidden></div><div class="emptyfav" id="favEmpty"><span>♡</span>Tu próxima historia empieza con un favorito. Guarda hasta 15 invitaciones tocando el corazón.</div></section>
-<div class="categoryarea" id="collections"></div><div class="wrap nodata" id="noResults" hidden><h2>No encontramos invitaciones</h2><p>Prueba otra búsqueda o categoría.</p><button class="btn outline" id="reset" style="margin-top:18px">Ver catálogo completo</button></div></section>
-<section class="wrap section" id="experiencia"><div class="intro"><p class="eyebrow">MÁS QUE UNA INVITACIÓN</p><h2>Creamos la primera emoción de tu celebración.</h2><p>Diseño cuidado, detalles memorables y tecnología al servicio de los momentos que importan.</p></div><div class="benefits"><article class="benefit"><span class="eyebrow">01 / DISEÑO</span><h3>Una historia única</h3><p>Diseños creados para reflejar el estilo y la personalidad de cada celebración.</p></article><article class="benefit"><span class="eyebrow">02 / EXPERIENCIA</span><h3>Momentos interactivos</h3><p>Música, animaciones, cuenta regresiva, galería y ubicación según el proyecto.</p></article><article class="benefit"><span class="eyebrow">03 / CONEXIÓN</span><h3>Comparte con emoción</h3><p>Un enlace listo para compartir con quienes formarán parte de tu día especial.</p></article></div></section>
-<section class="wrap section" id="paquetes"><div class="intro"><p class="eyebrow">SERVICIOS ÉVORA</p><h2>Una invitación a tu medida.</h2><p>Elige la experiencia que imaginas. Cotizamos cada proyecto según diseño y funcionalidades.</p></div><div class="plans"><article class="plan"><p class="eyebrow">PAQUETE 01</p><h3>Esencia</h3><p>La elegancia de un anuncio inolvidable.</p><ul><li>Diseño personalizado</li><li>Datos del evento</li><li>Versión adaptable a celulares</li><li>Enlace para compartir</li></ul><button class="btn outline" data-plan="Esencia">Elegir Esencia</button></article><article class="plan feature"><p class="eyebrow">PAQUETE 02 / FAVORITO</p><h3>Signature</h3><p>Una experiencia con más emoción y movimiento.</p><ul><li>Todo lo de Esencia</li><li>Animaciones y música</li><li>Cuenta regresiva</li><li>Galería de fotografías</li></ul><button class="btn" data-plan="Signature">Elegir Signature</button></article><article class="plan"><p class="eyebrow">PAQUETE 03</p><h3>Collection</h3><p>Una experiencia digital a otro nivel.</p><ul><li>Todo lo de Signature</li><li>Diseño inmersivo a medida</li><li>Secciones especiales</li><li>Integraciones sujetas a cotización</li></ul><button class="btn outline" data-plan="Collection">Elegir Collection</button></article></div><div class="addons"><p class="eyebrow">COMPLEMENTOS DISPONIBLES</p><p>Agrega ubicación, confirmaciones de asistencia, CRM, recordatorios u otras experiencias digitales, según viabilidad y cotización.</p><a class="btn alt" href="#solicitud">Personalizar mi proyecto →</a></div></section>
-<section class="request section" id="solicitud"><div class="wrap"><div class="intro"><p class="eyebrow">TU HISTORIA EMPIEZA AQUÍ</p><h2>Cuéntanos qué imaginas.</h2><p>Describe tu evento y prepara una solicitud personalizada. No se realiza ningún cargo al enviar esta propuesta.</p></div><form id="requestForm"><div class="fields"><div class="field"><label for="name">Tu nombre *</label><input id="name" name="name" required placeholder="¿Cómo te llamas?"></div><div class="field"><label for="eventType">Tipo de evento *</label><select id="eventType" name="eventType" required><option value="">Selecciona una opción</option><option>Boda</option><option>XV años</option><option>Infantil</option><option>Cumpleaños</option><option>Bautizo</option><option>Otro</option></select></div><div class="field"><label for="eventDate">Fecha (si ya la sabes)</label><input id="eventDate" name="date" type="date"></div></div><div class="fields" style="grid-template-columns:1fr 1fr"><div class="field"><label for="plan">Paquete</label><select name="plan" id="plan"><option>Por definir</option><option>Esencia</option><option>Signature</option><option>Collection</option></select></div><div class="field"><label for="contact">Correo o WhatsApp de contacto *</label><input id="contact" name="contact" required placeholder="Tu medio de contacto"></div></div><div class="field"><label for="description">Describe la invitación de tus sueños *</label><textarea name="description" id="description" required placeholder="Tema, colores, estilo, ideas, inspiraciones..."></textarea></div><p class="eyebrow" style="margin-top:20px">¿Qué te gustaría agregar?</p><div class="checkgrid"><label><input type="checkbox" name="extra" value="Música"> Música</label><label><input type="checkbox" name="extra" value="Cuenta regresiva"> Cuenta regresiva</label><label><input type="checkbox" name="extra" value="Ubicación"> Ubicación</label><label><input type="checkbox" name="extra" value="Confirmación de asistencia"> Confirmación de asistencia</label><label><input type="checkbox" name="extra" value="Galería"> Galería</label><label><input type="checkbox" name="extra" value="CRM"> CRM</label><label><input type="checkbox" name="extra" value="Recordatorios"> Recordatorios</label><label><input type="checkbox" name="extra" value="Otro"> Otro</label></div><button type="submit" class="btn">Preparar mi solicitud →</button><p class="hint">El formulario prepara un mensaje que podrás copiar o compartir. No almacena datos ni envía automáticamente la solicitud.</p></form></div></section></main>
-<footer class="wrap footer"><div><a class="brand" href="#inicio">ÉVORA</a><p>Digital Invitation Atelier · Cada historia merece una entrada inolvidable.</p><p>© <span id="year"></span> ÉVORA. Todos los derechos reservados.</p></div><div class="infinity"><span class="symbol">∞</span><div><strong>Infinity AI Lab</strong><small>CREATIVE TECHNOLOGY STUDIO</small></div></div></footer>
-<dialog id="preview"><div class="modalhero" id="previewImage"></div><button class="close" data-close="preview" aria-label="Cerrar">✕</button><div class="modalbody"><p class="eyebrow" id="previewCategory"></p><h2 id="previewTitle"></h2><p id="previewDescription"></p><div class="actions"><a href="#" target="_blank" rel="noopener noreferrer" class="btn" id="openDemo">▷ Abrir invitación</a><button class="btn alt" id="shareBtn" type="button"><svg class="shareicon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4.1M8.6 13.4l6.8 4.1"/></svg>Compartir</button><button class="btn alt" id="previewFav" type="button">♡ Guardar</button><button class="btn outline" id="requestLike" type="button">Quiero este estilo</button></div><p class="hint" style="margin-top:17px">Demostración con datos de ejemplo, no corresponde a un evento real.</p></div></dialog>
-<dialog id="limitDialog"><div class="modalbody"><button class="close" data-close="limitDialog" aria-label="Cerrar">✕</button><p class="eyebrow">TU COLECCIÓN</p><h2>¡Tu selección está completa!</h2><p>Puedes guardar un máximo de 15 invitaciones. Quita una de tus favoritas para agregar otra.</p><div class="actions"><button class="btn" id="viewFavs">Ver mis favoritos</button><button class="btn alt" data-close="limitDialog">Entendido</button></div></div></dialog>
-<dialog id="messageDialog"><div class="modalbody"><button class="close" data-close="messageDialog" aria-label="Cerrar">✕</button><p class="eyebrow">SOLICITUD PREPARADA</p><h2>Tu historia ya tiene un comienzo.</h2><p>Copia el mensaje para enviarlo por el medio de contacto que elijas.</p><textarea id="messageText" style="width:100%;min-height:230px;background:#0e1014;color:#f3eee5;border:1px solid #ffffff25;border-radius:7px;padding:15px;margin-top:20px" readonly></textarea><div class="actions"><button class="btn" id="copyMessage">Copiar solicitud</button><button class="btn alt" id="shareMessage">Compartir solicitud</button></div></div></dialog><div class="toast" id="toast" hidden role="status"></div>
+
+<!-- ======================= Encabezado ======================= -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">ÉVORA</a>
+    <nav class="nav-links" aria-label="Categorías">
+      <a href="#catalogo" data-jump="bodas">Bodas</a>
+      <a href="#catalogo" data-jump="xv">XV años</a>
+      <a href="#catalogo" data-jump="infantiles">Infantiles</a>
+      <a href="#catalogo" data-jump="juveniles">Juveniles</a>
+      <a href="#catalogo" data-jump="bautizos">Bautizos</a>
+      <a href="#paquetes">Paquetes</a>
+    </nav>
+    <div class="nav-right">
+      <button class="fav-toggle" id="goFav" type="button">♡ Mi selección <span id="favCountNav">0/15</span></button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#catalogo" data-jump="bodas">Bodas</a>
+    <a href="#catalogo" data-jump="xv">XV años</a>
+    <a href="#catalogo" data-jump="infantiles">Infantiles</a>
+    <a href="#catalogo" data-jump="juveniles">Juveniles</a>
+    <a href="#catalogo" data-jump="bautizos">Bautizos</a>
+    <a href="#paquetes">Paquetes</a>
+    <a href="#solicitud">Crear mi invitación</a>
+  </div>
+</header>
+
+<main>
+<!-- ======================= Hero ======================= -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">ÉVORA ATELIER · INVITACIONES DIGITALES</p>
+      <h1>Tu historia merece<br>una entrada <em>inolvidable.</em></h1>
+      <p class="lead">No enviamos invitaciones: creamos la primera emoción de tu evento. Diseño a la medida, música, cuenta regresiva y confirmación de asistencia — todo en un enlace listo para compartir.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#catalogo">Explorar el catálogo</a>
+        <a class="btn ghost" href="#solicitud">Crear mi invitación</a>
+      </div>
+      <p class="hero-note">Personalizable · Música · Confirmación de asistencia</p>
+    </div>
+    <figure class="hero-card">
+      <img src="covers/plata.jpg" alt="Portada de la invitación Elena & Alejandro, Promesa de Plata">
+      <figcaption class="hero-card-foot">
+        <span>
+          <strong>Promesa de Plata</strong>
+          <span>Elena &amp; Alejandro · 25 años</span>
+        </span>
+        <a class="btn outline" style="padding:9px 16px;min-height:0" href="https://infinity-ai-agency.github.io/Promesa-de-plata/" target="_blank" rel="noopener">Ver ↗</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================= Confianza (honesta, sin cifras inventadas) ======================= -->
+<section class="trust">
+  <div class="wrap">
+    <ul>
+      <li><strong>Diseño a la medida</strong><span>cada invitación se adapta a tu historia, no al revés</span></li>
+      <li><strong>Demos reales</strong><span>pruébalas tú mismo antes de pedir la tuya</span></li>
+      <li><strong>Tus datos, tu decisión</strong><span>nada se comparte ni se guarda sin tu autorización</span></li>
+      <li><strong>Infinity AI Lab</strong><span>diseño y tecnología bajo un mismo techo</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= Catálogo ======================= -->
+<section id="catalogo" aria-label="Catálogo">
+  <div class="wrap">
+    <div class="disclaimer">
+      <strong>Catálogo de demostración.</strong> Nombres, fechas y lugares son ficticios — son muestras para inspirar tu propio proyecto. Las categorías marcadas «Próximamente» aún no tienen demo pública.
+    </div>
+    <div class="catalog-tools">
+      <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría">
+        <button class="filter-chip" data-filter="all" aria-pressed="true">Para ti</button>
+        <button class="filter-chip" data-filter="bodas" aria-pressed="false">Bodas</button>
+        <button class="filter-chip" data-filter="xv" aria-pressed="false">XV años</button>
+        <button class="filter-chip" data-filter="infantiles" aria-pressed="false">Infantiles</button>
+        <button class="filter-chip" data-filter="juveniles" aria-pressed="false">Juveniles</button>
+        <button class="filter-chip" data-filter="bautizos" aria-pressed="false">Bautizos</button>
+      </div>
+      <label class="search-box">
+        <span style="color:var(--gold)">⌕</span>
+        <input type="search" id="search" placeholder="Buscar una invitación" aria-label="Buscar invitación">
+      </label>
+    </div>
+
+    <!-- Mis favoritos -->
+    <section class="collection" id="myFavorites" aria-labelledby="favTitle">
+      <div class="collection-head">
+        <div>
+          <span class="eyebrow">Tu colección personal</span>
+          <h2 id="favTitle">Mis favoritos <span class="muted" id="favCount" style="font-family:var(--sans);font-size:14px">0/15</span></h2>
+        </div>
+        <div>
+          <button class="scroll-btn" data-scroll="favorites" data-dir="-1" aria-label="Anterior">‹</button>
+          <button class="scroll-btn" data-scroll="favorites" data-dir="1" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+      <div class="carousel" id="favorites" hidden></div>
+      <p class="empty-fav" id="favEmpty"><span>♡</span>Tu próxima historia empieza con un favorito. Toca el corazón en cualquier diseño para guardarlo (hasta 15).</p>
+    </section>
+
+    <div id="collections"></div>
+    <div class="wrap no-results" id="noResults" hidden>
+      <h2>No encontramos invitaciones</h2>
+      <p>Prueba otra búsqueda o categoría.</p>
+      <button class="btn outline" id="resetFilters" style="margin-top:16px">Ver catálogo completo</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= Proceso ======================= -->
+<section class="section" id="experiencia">
+  <div class="wrap">
+    <div class="intro">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>De tu idea a un enlace listo para compartir.</h2>
+      <p>Cuatro pasos simples, sin sorpresas en el camino.</p>
+    </div>
+    <ol class="process">
+      <li><h3>Cuéntanos tu historia</h3><p>Llenas el formulario con el estilo, los datos y el paquete que imaginas.</p></li>
+      <li><h3>Diseñamos tu propuesta</h3><p>Creamos tu invitación con el tono y los colores de tu celebración.</p></li>
+      <li><h3>Revisamos contigo</h3><p>Ajustamos los detalles hasta que quede exactamente como la imaginaste.</p></li>
+      <li><h3>Compartes tu enlace</h3><p>Listo para enviar por WhatsApp, redes o donde prefieras.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= Paquetes ======================= -->
+<section class="section" id="paquetes">
+  <div class="wrap">
+    <div class="intro">
+      <p class="eyebrow">Servicios ÉVORA</p>
+      <h2>Una invitación a tu medida.</h2>
+      <p>Cotizamos cada proyecto según el diseño y las funciones que elijas.</p>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <p class="eyebrow">Paquete Pro</p>
+        <h3>Pro</h3>
+        <p>La elegancia de un anuncio inolvidable, con movimiento.</p>
+        <ul><li>Diseño personalizado</li><li>Datos de tu evento</li><li>Versión adaptada a celular</li><li>Animaciones y música</li><li>Cuenta regresiva</li><li>Enlace para compartir</li></ul>
+        <button class="btn outline" data-plan="Pro">Elegir Pro</button>
+      </article>
+      <article class="plan feature">
+        <p class="eyebrow">Paquete Premium · Favorito</p>
+        <h3>Premium</h3>
+        <p>Una experiencia digital a otro nivel, sin límites de diseño.</p>
+        <ul><li>Todo lo de Pro</li><li>Galería de fotografías</li><li>Diseño inmersivo a medida</li><li>Secciones especiales</li><li>Integraciones bajo cotización</li></ul>
+        <button class="btn" data-plan="Premium">Elegir Premium</button>
+      </article>
+    </div>
+    <div class="addons">
+      <p><strong class="eyebrow" style="display:block;margin-bottom:6px">Complementos disponibles</strong>Ubicación, confirmación de asistencia, CRM, recordatorios automáticos y más, según viabilidad y cotización.</p>
+      <a class="btn ghost" href="#solicitud">Personalizar mi proyecto →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= Formulario de solicitud ======================= -->
+<section class="section request" id="solicitud">
+  <div class="wrap">
+    <div class="intro">
+      <p class="eyebrow">Tu historia empieza aquí</p>
+      <h2>Cuéntanos qué imaginas.</h2>
+      <p>Describe tu evento y prepara tu solicitud. No se realiza ningún cargo al enviarla.</p>
+    </div>
+    <form id="requestForm">
+      <div class="fields">
+        <div class="field"><label for="name">Tu nombre *</label><input id="name" name="name" required placeholder="¿Cómo te llamas?"></div>
+        <div class="field">
+          <label for="eventType">Tipo de evento *</label>
+          <select id="eventType" name="eventType" required>
+            <option value="">Selecciona una opción</option>
+            <option>Boda</option><option>XV años</option><option>Infantil</option>
+            <option>Cumpleaños</option><option>Bautizo</option><option>Otro</option>
+          </select>
+        </div>
+        <div class="field"><label for="eventDate">Fecha (si ya la sabes)</label><input id="eventDate" name="date" type="date"></div>
+      </div>
+      <div class="fields two">
+        <div class="field">
+          <label for="plan">Paquete</label>
+          <select name="plan" id="plan"><option>Por definir</option><option>Pro</option><option>Premium</option></select>
+        </div>
+        <div class="field"><label for="contact">Tu correo o WhatsApp de contacto *</label><input id="contact" name="contact" required placeholder="Para responderte"></div>
+      </div>
+      <div class="field"><label for="description">Describe la invitación de tus sueños *</label><textarea name="description" id="description" required placeholder="Tema, colores, estilo, ideas, inspiraciones..."></textarea></div>
+
+      <p class="eyebrow" style="margin-top:22px;display:block">¿Qué te gustaría agregar?</p>
+      <div class="check-grid">
+        <label><input type="checkbox" name="extra" value="Música"> Música</label>
+        <label><input type="checkbox" name="extra" value="Cuenta regresiva"> Cuenta regresiva</label>
+        <label><input type="checkbox" name="extra" value="Ubicación"> Ubicación</label>
+        <label><input type="checkbox" name="extra" value="Confirmación de asistencia"> Confirmación de asistencia</label>
+        <label><input type="checkbox" name="extra" value="Galería"> Galería</label>
+        <label><input type="checkbox" name="extra" value="CRM"> CRM</label>
+        <label><input type="checkbox" name="extra" value="Recordatorios"> Recordatorios</label>
+        <label><input type="checkbox" name="extra" value="Otro"> Otro</label>
+      </div>
+      <button type="submit" class="btn">Enviar mi solicitud →</button>
+      <p class="hint" id="submitHint">Al enviar, se abrirá WhatsApp con tu solicitud lista para mandarnos.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ======================= Footer ======================= -->
+<footer class="wrap site-footer">
+  <div>
+    <a class="brand" href="#inicio" style="font-size:24px">ÉVORA</a>
+    <p>Digital Invitation Atelier · Cada historia merece una entrada inolvidable.</p>
+    <p>© <span id="year"></span> ÉVORA. Todos los derechos reservados.</p>
+  </div>
+  <div class="lab-credit">
+    <span class="mark">∞</span>
+    <div><strong>Infinity AI Lab</strong><small>CREATIVE TECHNOLOGY STUDIO</small></div>
+  </div>
+</footer>
+
+<!-- ======================= Modales ======================= -->
+<dialog id="preview">
+  <div class="modal-hero" id="previewImage"></div>
+  <button class="modal-close" data-close="preview" aria-label="Cerrar">✕</button>
+  <div class="modal-body">
+    <p class="eyebrow" id="previewCategory"></p>
+    <h2 id="previewTitle"></h2>
+    <p id="previewDescription"></p>
+    <div class="modal-actions">
+      <a class="btn" href="#" target="_blank" rel="noopener" id="openDemo">▷ Abrir invitación</a>
+      <button class="btn ghost" id="shareBtn" type="button">↗ Compartir</button>
+      <button class="btn outline" id="previewFav" type="button">♡ Guardar</button>
+      <button class="btn outline" id="requestLike" type="button">Quiero este estilo</button>
+    </div>
+    <p class="hint">Demostración con datos de ejemplo — no corresponde a un evento real.</p>
+  </div>
+</dialog>
+
+<dialog id="limitDialog">
+  <div class="modal-body">
+    <button class="modal-close" data-close="limitDialog" aria-label="Cerrar">✕</button>
+    <p class="eyebrow">Tu colección</p>
+    <h2>¡Tu selección está completa!</h2>
+    <p>Puedes guardar hasta 15 invitaciones. Quita una de tus favoritas para agregar otra.</p>
+    <div class="modal-actions">
+      <button class="btn" id="viewFavs">Ver mis favoritos</button>
+      <button class="btn ghost" data-close="limitDialog">Entendido</button>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" hidden role="status"></div>
+
 <script>
 'use strict';
-const BASE='https://infinity-ai-agency.github.io/';
-const CATALOG=[
-{id:'plata',category:'bodas',title:'Promesa de plata',subtitle:'Bodas de plata · Renovación de votos',description:'Elena y Alejandro celebran 25 años de amor con una renovación de votos. Una experiencia elegante para celebrar su historia.',url:BASE+'Promesa-de-plata/',image:'https://raw.githubusercontent.com/Infinity-AI-Agency/Promesa-de-plata/main/hero.jpg',available:true,bg:'#d9ddd5',ink:'#4b5e52',art:'◇'},
-{id:'royal-burgundy',category:'bodas',title:'Royal Burgundy',subtitle:'Boda · Elegancia borgoña y oro',description:'Valeria y Sebastián protagonizan una celebración de inspiración clásica y lujo contemporáneo: tonos borgoña, detalles dorados y una apertura memorable. Todos los datos son ficticios.',url:BASE+'Boda-invitacion-dorada/',image:'https://raw.githubusercontent.com/Infinity-AI-Agency/Boda-invitacion-dorada/main/IMG_5001.jpeg',available:true,bg:'#350d20',ink:'#e8ca90',art:'♧',isNew:true},
-{id:'jardin',category:'bodas',title:'Boda',subtitle:'Elegancia natural · Romance',description:'Andrea y Santiago celebran su boda con una invitación de elegancia natural y delicados detalles.',url:BASE+'Boda-invitacion/',image:'',available:true,bg:'#c9c5aa',ink:'#465247',art:'❦'},
-{id:'ironman',category:'infantiles',title:'Iron Man',subtitle:'Una misión especial',description:'Una entrada con luz, una misión de cumpleaños y una experiencia temática para pequeños héroes.',url:BASE+'Iron-man-invitacion/',image:'https://raw.githubusercontent.com/Infinity-AI-Agency/Iron-man-invitacion/main/hero.jpg',available:true,bg:'#692f34',ink:'#efc889',art:'✦'},
-{id:'luna-kpop',category:'infantiles',title:'Luna cumple 4',subtitle:'Infantil · Fiesta K-pop y estrellas',description:'Una explosión de música, estrellas y color para celebrar los cuatro años de Luna. Una invitación alegre y divertida. Datos ficticios de demostración.',url:BASE+'Invitaci-n-cumple/',image:'https://raw.githubusercontent.com/Infinity-AI-Agency/Invitaci-n-cumple/main/kpop.jpeg',available:true,bg:'#401465',ink:'#ffb7e3',art:'★',isNew:true},
-{id:'kitty',category:'infantiles',title:'Hello Kitty',subtitle:'Dulzura y diversión',description:'Una celebración infantil llena de ternura, alegría y detalles inspirados en Hello Kitty.',url:BASE+'Hello-kitty-invitacion/',image:'',available:true,bg:'#f4cbd7',ink:'#a33763',art:'♡'},
-{id:'xv-aurora',category:'xv',title:'Aurora',subtitle:'XV años · Jardín de ensueño',description:'Concepto editorial de XV años con flores, magia y una atmósfera etérea.',url:'',image:'',available:false,bg:'#d6c5cf',ink:'#68465f',art:'✧'},
-{id:'xv-noche',category:'xv',title:'Noche estelar',subtitle:'XV años · Cielo de estrellas',description:'Concepto elegante de XV años bajo un cielo nocturno lleno de luz.',url:'',image:'',available:false,bg:'#202c51',ink:'#e6c78b',art:'✦'},
-{id:'juvenil-neon',category:'juveniles',title:'Neon Nights',subtitle:'Juvenil · Energía y color',description:'Concepto de fiesta juvenil con tonos vibrantes y una personalidad atrevida.',url:'',image:'',available:false,bg:'#26114e',ink:'#e69eff',art:'✶'},
-{id:'juvenil-pool',category:'juveniles',title:'Summer Party',subtitle:'Juvenil · Día de fiesta',description:'Concepto luminoso para celebrar con amigos y buen ambiente.',url:'',image:'',available:false,bg:'#0f5463',ink:'#c0f2f0',art:'☼'},
-{id:'bautizo-angel',category:'bautizos',title:'Pequeño milagro',subtitle:'Bautizo · Ternura celestial',description:'Concepto delicado para un bautizo con tonos suaves y detalles clásicos.',url:'',image:'',available:false,bg:'#e2ddd2',ink:'#8c785e',art:'✧'},
-{id:'bautizo-olivo',category:'bautizos',title:'Olivo y luz',subtitle:'Bautizo · Natural y sereno',description:'Concepto minimalista con detalles botánicos para celebrar un momento especial.',url:'',image:'',available:false,bg:'#cdd5c3',ink:'#54644b',art:'❦'}
+
+/* ========================================================================
+   CONFIGURACIÓN — edita aquí sin tocar el resto del código
+   ======================================================================== */
+const CONFIG = {
+  // Tu número de WhatsApp de negocio, con código de país, solo dígitos.
+  // Ejemplo: 52 (México) + 10 dígitos = 521XXXXXXXXXX
+  // Mientras esté vacío, el formulario solo copiará el mensaje al portapapeles.
+  whatsapp: '', // TODO: pon aquí tu número antes de publicar
+};
+
+// Dónde viven las demos reales (cada una es su propio repo de GitHub Pages)
+const BASE = 'https://infinity-ai-agency.github.io/';
+
+/* ------------------------------------------------------------------------
+   CATÁLOGO
+   Cada diseño necesita: id, category, title, subtitle, description.
+   `image` es opcional — si no la pones, se usa un respaldo elegante con
+   `bg` (fondo) e `ink` (color del texto/ornamento) y `art` (símbolo).
+   `url` es el enlace a la demo real; si está vacío, el diseño se muestra
+   como "próximamente" y no se puede abrir.
+   ------------------------------------------------------------------------ */
+const CATALOG = [
+  {
+    id: 'plata', category: 'bodas', isNew: false,
+    title: 'Elena & Alejandro', subtitle: 'Bodas de plata · Renovación de votos',
+    description: '25 años, un mismo amor. Una invitación de colección para celebrar una historia que se sigue escribiendo.',
+    url: BASE + 'Promesa-de-plata/', image: 'covers/plata.jpg',
+  },
+  {
+    id: 'royal-burgundy', category: 'bodas', isNew: true,
+    title: 'Valeria & Sebastián', subtitle: 'Boda · Elegancia en borgoña y oro',
+    description: 'Una celebración de inspiración clásica y lujo contemporáneo: tonos borgoña, detalles dorados y una apertura memorable.',
+    url: BASE + 'Boda-invitacion-dorada/', image: 'covers/royal-burgundy.jpg',
+  },
+  {
+    id: 'jardin', category: 'bodas', isNew: false,
+    title: 'Andrea & Santiago', subtitle: 'Boda · Romance natural',
+    description: 'Una historia para siempre, contada con elegancia natural y delicados detalles botánicos.',
+    url: BASE + 'Boda-invitacion/', image: 'covers/jardin.jpg',
+  },
+  // Nota: estos tres usan personajes con derechos de autor en la demo real
+  // (Marvel, Sanrio y la película de Sony/Netflix "KPop Demon Hunters").
+  // Por eso aquí los describimos de forma genérica y sin su arte — la demo
+  // original no se modificó, pero no conviene promoverla con el nombre o la
+  // imagen del personaje. Ver nota completa en el mensaje de entrega.
+  {
+    id: 'ironman', category: 'infantiles', isNew: false,
+    title: 'Mateo cumple 7', subtitle: 'Cumpleaños infantil · Misión de súper equipo',
+    description: 'Una tarde de juegos, retos y sorpresas para reunir al mejor equipo de pequeños héroes.',
+    url: BASE + 'Iron-man-invitacion/', bg: '#3a1a1c', ink: '#f0c27e', art: '✦',
+  },
+  {
+    id: 'luna-kpop', category: 'infantiles', isNew: true,
+    title: 'Luna cumple 4', subtitle: 'Cumpleaños infantil · Fiesta de estrellas y color',
+    description: 'Música, brillo y mucha magia para celebrar a nuestra pequeña estrella.',
+    url: BASE + 'Invitaci-n-cumple/', bg: '#2a1240', ink: '#e8b3e8', art: '★',
+  },
+  {
+    id: 'kitty', category: 'infantiles', isNew: false,
+    title: 'Cumpleaños de Valentina', subtitle: 'Cumpleaños infantil · Dulce y tierno',
+    description: 'Una invitación llena de ternura, color rosa y mucha dulzura.',
+    url: BASE + 'Hello-kitty-invitacion/', bg: '#45202f', ink: '#f3c3d4', art: '♡',
+  },
 ];
-const CATEGORIES={bodas:'Bodas que enamoran',xv:'XV años inolvidables',infantiles:'Pequeñas grandes fiestas',juveniles:'Juveniles',bautizos:'Bautizos'};
-const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let filter='all',term='',activeId=null,toastTimeout;const STORAGE='evora-favorites-v1',MAX=15;
-let favorites=[];try{const list=JSON.parse(localStorage.getItem(STORAGE)||'[]');if(Array.isArray(list))favorites=[...new Set(list.filter(id=>CATALOG.some(c=>c.id===id)))].slice(0,MAX)}catch(e){}
-function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>$('toast').hidden=true,3200)}
-function remember(){try{localStorage.setItem(STORAGE,JSON.stringify(favorites))}catch(e){}}
-function toggleFavorite(id){if(favorites.includes(id))favorites=favorites.filter(x=>x!==id);else if(favorites.length>=MAX){$('limitDialog').showModal();return}else favorites.push(id);remember();render();syncPreview();}
-function cover(item){let image=item.image?`<img src="${esc(item.image)}" alt="Portada de ${esc(item.title)}" loading="lazy" onerror="this.hidden=true;this.parentNode.querySelector('.fallback').style.display='grid'">`:'';return `<div class="cover"><div class="fallback" style="--fallback-bg:${esc(item.bg)};--fallback-ink:${esc(item.ink)}"><span class="ornament">${esc(item.art)}</span><span class="name">${esc(item.title)}</span></div>${image}<div class="shade"></div><div class="covername"><span class="type">${esc(item.category.toUpperCase())}</span><strong>${esc(item.title)}</strong></div><span class="flag">${item.isNew?'NUEVA':item.available?'ÉVORA ATELIER':'CONCEPTO'}</span><button class="viewcard" data-open="${esc(item.id)}" aria-label="Detalles de ${esc(item.title)}">Ver detalles</button><button class="heart" data-fav="${esc(item.id)}" aria-label="${favorites.includes(item.id)?'Quitar de favoritos':'Agregar a favoritos'}" aria-pressed="${favorites.includes(item.id)}">${favorites.includes(item.id)?'♥':'♡'}</button></div>`}
-function card(item){return `<article class="card">${cover(item)}<div class="cardinfo"><div><h3>${esc(item.title)}</h3><p>${esc(item.subtitle)}</p></div><button class="detail" data-open="${esc(item.id)}" aria-label="Ver descripción">↗</button></div></article>`}
-function group(category,items){return `<section class="wrap collection" aria-labelledby="title-${category}"><div class="sectionhead"><div><p class="eyebrow">COLECCIÓN ÉVORA</p><h2 id="title-${category}">${esc(CATEGORIES[category])}</h2></div><div><button class="scrollbtn" data-scroll="row-${category}" data-dir="-1" aria-label="Anterior">‹</button> <button class="scrollbtn" data-scroll="row-${category}" data-dir="1" aria-label="Siguiente">›</button></div></div><div class="carousel" id="row-${category}">${items.map(card).join('')}</div></section>`}
-function render(){const filtered=CATALOG.filter(x=>(filter==='all'||x.category===filter)&&[x.title,x.subtitle,x.description,x.category].join(' ').toLocaleLowerCase('es').includes(term));$('collections').innerHTML=Object.keys(CATEGORIES).map(cat=>{const items=filtered.filter(x=>x.category===cat);return items.length?group(cat,items):''}).join('');$('noResults').hidden=filtered.length>0;const saved=favorites.map(id=>CATALOG.find(c=>c.id===id)).filter(Boolean);$('favorites').innerHTML=saved.map(card).join('');$('favorites').hidden=!saved.length;$('favEmpty').hidden=!!saved.length;$('favoriteCount').textContent=$('favCount').textContent=`${favorites.length}/${MAX}`;$('heroSave').textContent=favorites.includes('plata')?'♥ Guardado':'♡ Guardar';document.querySelectorAll('[data-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.filter===filter)))}
-function syncPreview(){if(!activeId)return;const item=CATALOG.find(x=>x.id===activeId);if(item)$('previewFav').textContent=favorites.includes(item.id)?'♥ Guardado':'♡ Guardar'}
-function preview(id){const item=CATALOG.find(x=>x.id===id);if(!item)return;activeId=id;const image=item.image?`<img src="${esc(item.image)}" alt="${esc(item.title)}" onerror="this.hidden=true">`:'';$('previewImage').style.background=item.bg;$('previewImage').innerHTML=image;$('previewCategory').textContent=item.subtitle;$('previewTitle').textContent=item.title;$('previewDescription').textContent=item.description;$('openDemo').hidden=!item.available;$('shareBtn').hidden=!item.available;$('openDemo').href=item.url||'#';syncPreview();$('preview').showModal()}
-async function copyText(s){try{await navigator.clipboard.writeText(s);toast('Enlace copiado al portapapeles')}catch{const inp=document.createElement('textarea');inp.value=s;document.body.append(inp);inp.select();try{document.execCommand('copy');toast('Enlace copiado')}catch{toast('Selecciona y copia el enlace manualmente')}inp.remove()}}
-async function share(item){if(!item?.url)return;try{if(navigator.share){await navigator.share({title:item.title+' · ÉVORA',text:'Mira esta invitación digital:',url:item.url});return}}catch(e){if(e.name==='AbortError')return}await copyText(item.url)}
-function selectFilter(value){filter=value;render();document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})}
-document.addEventListener('click',e=>{const fav=e.target.closest('[data-fav]');if(fav){toggleFavorite(fav.dataset.fav);return}const opener=e.target.closest('[data-open]');if(opener){preview(opener.dataset.open);return}const sc=e.target.closest('[data-scroll]');if(sc){const node=$(sc.dataset.scroll);if(node)node.scrollBy({left:node.clientWidth*.8*Number(sc.dataset.dir),behavior:'smooth'});return}const category=e.target.closest('[data-jump]');if(category){e.preventDefault();selectFilter(category.dataset.jump);$('mobileMenu').hidden=true;$('menuBtn').setAttribute('aria-expanded','false');return}const f=e.target.closest('[data-filter]');if(f){selectFilter(f.dataset.filter);return}const plan=e.target.closest('[data-plan]');if(plan){$('plan').value=plan.dataset.plan;document.getElementById('solicitud').scrollIntoView({behavior:'smooth'});return}const close=e.target.closest('[data-close]');if(close){$(close.dataset.close).close()}});
-$('search').addEventListener('input',e=>{term=e.target.value.trim().toLocaleLowerCase('es');render()});$('reset').addEventListener('click',()=>{term='';filter='all';$('search').value='';render()});$('goFav').addEventListener('click',()=>$('myFavorites').scrollIntoView({behavior:'smooth'}));$('heroSave').addEventListener('click',()=>toggleFavorite('plata'));
-$('menuBtn').addEventListener('click',()=>{const menu=$('mobileMenu');menu.hidden=!menu.hidden;$('menuBtn').setAttribute('aria-expanded',String(!menu.hidden))});$('previewFav').addEventListener('click',()=>toggleFavorite(activeId));$('shareBtn').addEventListener('click',()=>share(CATALOG.find(x=>x.id===activeId)));$('requestLike').addEventListener('click',()=>{const item=CATALOG.find(x=>x.id===activeId);if(item){$('eventType').value=({bodas:'Boda',xv:'XV años',infantiles:'Infantil',juveniles:'Cumpleaños',bautizos:'Bautizo'})[item.category];$('description').value='Me interesa el estilo «'+item.title+'». Me gustaría personalizarlo para mi evento. '}$('preview').close();$('solicitud').scrollIntoView({behavior:'smooth'})});$('viewFavs').addEventListener('click',()=>{$('limitDialog').close();$('myFavorites').scrollIntoView({behavior:'smooth'})});
-document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
-$('requestForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const extras=f.getAll('extra');const message=['Hola, ÉVORA. Me gustaría solicitar una invitación digital.','','Nombre: '+f.get('name'),'Evento: '+f.get('eventType'),'Fecha: '+(f.get('date')||'Por definir'),'Paquete: '+f.get('plan'),'Contacto: '+f.get('contact'),'','Mi idea: '+f.get('description'),'','Complementos: '+(extras.join(', ')||'Por definir'),'','Enviado desde el catálogo ÉVORA.'].join('\n');$('messageText').value=message;$('messageDialog').showModal()});$('copyMessage').addEventListener('click',()=>copyText($('messageText').value));$('shareMessage').addEventListener('click',async()=>{const message=$('messageText').value;try{if(navigator.share){await navigator.share({text:message,title:'Solicitud ÉVORA'});return}}catch(e){if(e.name==='AbortError')return}await copyText(message)});$('year').textContent=new Date().getFullYear();render();
+
+// Categorías del catálogo, en el orden en que se muestran.
+const CATEGORIES = {
+  bodas:      { label: 'Bodas que enamoran' },
+  xv:         { label: 'XV años inolvidables' },
+  infantiles: { label: 'Pequeñas grandes fiestas' },
+  juveniles:  { label: 'Juveniles' },
+  bautizos:   { label: 'Bautizos' },
+};
+
+/* ------------------------------------------------------------------------
+   Utilidades
+   ------------------------------------------------------------------------ */
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+const STORAGE_KEY = 'evora-favorites-v1';
+const MAX_FAVORITES = 15;
+
+let activeFilter = 'all';
+let searchTerm = '';
+let activePreviewId = null;
+let toastTimer;
+
+let favorites = [];
+try {
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  if (Array.isArray(saved)) favorites = [...new Set(saved.filter((id) => CATALOG.some((d) => d.id === id)))].slice(0, MAX_FAVORITES);
+} catch (e) { /* localStorage no disponible — seguimos sin favoritos */ }
+
+function saveFavorites() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites)); } catch (e) {}
+}
+
+function showToast(message) {
+  $('toast').textContent = message;
+  $('toast').hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { $('toast').hidden = true; }, 3200);
+}
+
+function toggleFavorite(id) {
+  if (favorites.includes(id)) {
+    favorites = favorites.filter((x) => x !== id);
+  } else if (favorites.length >= MAX_FAVORITES) {
+    $('limitDialog').showModal();
+    return;
+  } else {
+    favorites.push(id);
+  }
+  saveFavorites();
+  renderCatalog();
+  syncPreviewFavButton();
+}
+
+/* ------------------------------------------------------------------------
+   Render del catálogo
+   ------------------------------------------------------------------------ */
+function designCover(d) {
+  const image = d.image
+    ? `<img src="${esc(d.image)}" alt="Portada de ${esc(d.title)}" loading="lazy" onerror="this.hidden=true">`
+    : '';
+  const isFav = favorites.includes(d.id);
+  return `
+    <div class="card-cover" style="--fb-bg:${esc(d.bg || '')};--fb-ink:${esc(d.ink || '')}">
+      <div class="card-fallback"><span class="mark">${esc(d.art || '◇')}</span><span class="name">${esc(d.title)}</span></div>
+      ${image}
+      <div class="card-shade"></div>
+      <div class="card-label"><span class="type">${esc(CATEGORIES[d.category]?.label ? d.category.toUpperCase() : '')}</span><strong>${esc(d.title)}</strong></div>
+      <span class="card-flag">${d.isNew ? 'NUEVA' : (d.url ? 'ÉVORA ATELIER' : 'PRÓXIMAMENTE')}</span>
+      <button class="card-heart" data-fav="${esc(d.id)}" aria-pressed="${isFav}" aria-label="${isFav ? 'Quitar de favoritos' : 'Agregar a favoritos'}">${isFav ? '♥' : '♡'}</button>
+      <button class="card-open" data-open="${esc(d.id)}" aria-label="Ver detalles de ${esc(d.title)}">Ver detalles</button>
+    </div>`;
+}
+
+function designCard(d) {
+  return `
+    <article class="card">
+      ${designCover(d)}
+      <div class="card-info">
+        <div><h3>${esc(d.title)}</h3><p>${esc(d.subtitle)}</p></div>
+        <button class="card-detail" data-open="${esc(d.id)}" aria-label="Ver descripción">↗</button>
+      </div>
+    </article>`;
+}
+
+function categoryGroup(categoryId, items) {
+  const info = CATEGORIES[categoryId];
+  if (!items.length) {
+    return `
+      <section class="wrap collection" aria-labelledby="title-${categoryId}">
+        <div class="collection-head"><div><span class="eyebrow">Colección ÉVORA</span><h2 id="title-${categoryId}">${esc(info.label)}</h2></div></div>
+        <div class="coming-soon">
+          <span class="mark">✧</span>
+          <div style="flex:1;min-width:220px"><h3>Próximamente en esta categoría</h3><p>Todavía no tenemos una demo pública aquí. Cuéntanos qué imaginas y la diseñamos contigo.</p></div>
+          <a class="btn outline" href="#solicitud">Solicitar diseño →</a>
+        </div>
+      </section>`;
+  }
+  return `
+    <section class="wrap collection" aria-labelledby="title-${categoryId}">
+      <div class="collection-head">
+        <div><span class="eyebrow">Colección ÉVORA</span><h2 id="title-${categoryId}">${esc(info.label)}</h2></div>
+        <div>
+          <button class="scroll-btn" data-scroll="row-${categoryId}" data-dir="-1" aria-label="Anterior">‹</button>
+          <button class="scroll-btn" data-scroll="row-${categoryId}" data-dir="1" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+      <div class="carousel" id="row-${categoryId}">${items.map(designCard).join('')}</div>
+    </section>`;
+}
+
+function renderCatalog() {
+  const term = searchTerm.toLocaleLowerCase('es');
+  const filtered = CATALOG.filter((d) =>
+    (activeFilter === 'all' || d.category === activeFilter) &&
+    [d.title, d.subtitle, d.description, d.category].join(' ').toLocaleLowerCase('es').includes(term)
+  );
+
+  const categoryIds = Object.keys(CATEGORIES);
+  const visibleCategories = activeFilter === 'all' ? categoryIds : categoryIds.filter((c) => c === activeFilter);
+
+  $('collections').innerHTML = visibleCategories
+    .map((cat) => categoryGroup(cat, filtered.filter((d) => d.category === cat)))
+    .join('');
+
+  $('noResults').hidden = filtered.length > 0 || term === '';
+
+  const savedDesigns = favorites.map((id) => CATALOG.find((d) => d.id === id)).filter(Boolean);
+  $('favorites').innerHTML = savedDesigns.map(designCard).join('');
+  $('favorites').hidden = savedDesigns.length === 0;
+  $('favEmpty').hidden = savedDesigns.length > 0;
+  $('favCount').textContent = $('favCountNav').textContent = `${favorites.length}/${MAX_FAVORITES}`;
+
+  document.querySelectorAll('[data-filter]').forEach((el) => el.setAttribute('aria-pressed', String(el.dataset.filter === activeFilter)));
+}
+
+function selectFilter(value) {
+  activeFilter = value;
+  renderCatalog();
+  $('catalogo').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ------------------------------------------------------------------------
+   Modal de vista previa
+   ------------------------------------------------------------------------ */
+function syncPreviewFavButton() {
+  if (!activePreviewId) return;
+  $('previewFav').textContent = favorites.includes(activePreviewId) ? '♥ Guardado' : '♡ Guardar';
+}
+
+function openPreview(id) {
+  const d = CATALOG.find((x) => x.id === id);
+  if (!d) return;
+  activePreviewId = id;
+  const image = d.image ? `<img src="${esc(d.image)}" alt="${esc(d.title)}" onerror="this.hidden=true">` : '';
+  $('previewImage').style.background = d.bg || 'var(--panel-2)';
+  $('previewImage').innerHTML = image;
+  $('previewCategory').textContent = d.subtitle;
+  $('previewTitle').textContent = d.title;
+  $('previewDescription').textContent = d.description;
+  $('openDemo').hidden = !d.url;
+  $('shareBtn').hidden = !d.url;
+  $('openDemo').href = d.url || '#';
+  syncPreviewFavButton();
+  $('preview').showModal();
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast('Copiado al portapapeles');
+  } catch (e) {
+    const tmp = document.createElement('textarea');
+    tmp.value = text;
+    document.body.append(tmp);
+    tmp.select();
+    try { document.execCommand('copy'); showToast('Copiado'); }
+    catch (e2) { showToast('Selecciona y copia el texto manualmente'); }
+    tmp.remove();
+  }
+}
+
+async function shareDesign(d) {
+  if (!d?.url) return;
+  try {
+    if (navigator.share) { await navigator.share({ title: d.title + ' · ÉVORA', text: 'Mira esta invitación digital:', url: d.url }); return; }
+  } catch (e) { if (e.name === 'AbortError') return; }
+  await copyText(d.url);
+}
+
+/* ------------------------------------------------------------------------
+   Eventos
+   ------------------------------------------------------------------------ */
+document.addEventListener('click', (e) => {
+  const fav = e.target.closest('[data-fav]');
+  if (fav) { toggleFavorite(fav.dataset.fav); return; }
+
+  const opener = e.target.closest('[data-open]');
+  if (opener) { openPreview(opener.dataset.open); return; }
+
+  const scroller = e.target.closest('[data-scroll]');
+  if (scroller) {
+    const row = $(scroller.dataset.scroll);
+    if (row) row.scrollBy({ left: row.clientWidth * 0.8 * Number(scroller.dataset.dir), behavior: 'smooth' });
+    return;
+  }
+
+  const jump = e.target.closest('[data-jump]');
+  if (jump) {
+    e.preventDefault();
+    selectFilter(jump.dataset.jump);
+    $('mobileMenu').hidden = true;
+    $('menuBtn').setAttribute('aria-expanded', 'false');
+    return;
+  }
+
+  const filterBtn = e.target.closest('[data-filter]');
+  if (filterBtn) { selectFilter(filterBtn.dataset.filter); return; }
+
+  const planBtn = e.target.closest('[data-plan]');
+  if (planBtn) {
+    $('plan').value = planBtn.dataset.plan;
+    $('solicitud').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+
+  const closeBtn = e.target.closest('[data-close]');
+  if (closeBtn) { $(closeBtn.dataset.close).close(); }
+});
+
+$('search').addEventListener('input', (e) => { searchTerm = e.target.value.trim(); renderCatalog(); });
+$('resetFilters').addEventListener('click', () => { searchTerm = ''; activeFilter = 'all'; $('search').value = ''; renderCatalog(); });
+$('goFav').addEventListener('click', () => $('myFavorites').scrollIntoView({ behavior: 'smooth' }));
+$('menuBtn').addEventListener('click', () => {
+  const menu = $('mobileMenu');
+  menu.hidden = !menu.hidden;
+  $('menuBtn').setAttribute('aria-expanded', String(!menu.hidden));
+});
+$('previewFav').addEventListener('click', () => toggleFavorite(activePreviewId));
+$('shareBtn').addEventListener('click', () => shareDesign(CATALOG.find((x) => x.id === activePreviewId)));
+$('requestLike').addEventListener('click', () => {
+  const d = CATALOG.find((x) => x.id === activePreviewId);
+  if (d) {
+    const typeByCategory = { bodas: 'Boda', xv: 'XV años', infantiles: 'Infantil', juveniles: 'Cumpleaños', bautizos: 'Bautizo' };
+    $('eventType').value = typeByCategory[d.category] || '';
+    $('description').value = `Me interesa el estilo «${d.title}». Me gustaría personalizarlo para mi evento. `;
+  }
+  $('preview').close();
+  $('solicitud').scrollIntoView({ behavior: 'smooth' });
+});
+$('viewFavs').addEventListener('click', () => { $('limitDialog').close(); $('myFavorites').scrollIntoView({ behavior: 'smooth' }); });
+document.querySelectorAll('dialog').forEach((d) => d.addEventListener('click', (e) => { if (e.target === d) d.close(); }));
+
+/* ------------------------------------------------------------------------
+   Formulario de solicitud — arma el mensaje y lo manda por WhatsApp si hay
+   número configurado; si no, lo copia al portapapeles.
+   ------------------------------------------------------------------------ */
+$('requestForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const extras = data.getAll('extra');
+  const message = [
+    'Hola, ÉVORA. Me gustaría solicitar una invitación digital.', '',
+    'Nombre: ' + data.get('name'),
+    'Evento: ' + data.get('eventType'),
+    'Fecha: ' + (data.get('date') || 'Por definir'),
+    'Paquete: ' + data.get('plan'),
+    'Contacto: ' + data.get('contact'), '',
+    'Mi idea: ' + data.get('description'), '',
+    'Complementos: ' + (extras.join(', ') || 'Por definir'), '',
+    'Enviado desde el catálogo ÉVORA.',
+  ].join('\n');
+
+  if (CONFIG.whatsapp) {
+    window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
+  } else {
+    copyText(message);
+    showToast('Mensaje copiado — pégalo donde prefieras enviarlo');
+  }
+});
+
+$('year').textContent = new Date().getFullYear();
+renderCatalog();
 </script>
-</body></html>
+</body>
+</html>
