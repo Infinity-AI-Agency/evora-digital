@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0d10">
+<meta name="description" content="ÉVORA — catálogo de invitaciones digitales. Explora diseños por categoría y cuéntanos qué imaginas para tu evento.">
+<title>ÉVORA | Invitaciones Digitales</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ======================================================================
+   ÉVORA — catálogo tipo "Netflix": carruseles por categoría + una caja
+   simple al final para contar qué se quiere. Los colores y tipografías
+   viven en :root, así que para ajustar la marca basta con tocar esta
+   primera parte.
+   ====================================================================== */
+
+:root{
+  --ink:        #0c0d10;
+  --panel:      #17191e;
+  --panel-2:    #1f222a;
+  --line:       rgba(255,255,255,0.09);
+
+  --gold:       #c9a567;
+  --gold-soft:  rgba(201,165,103,0.14);
+  --wine:       #5c2430;
+
+  --text:       #f3efe8;
+  --muted:      #a79fa0;
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', Arial, sans-serif;
+
+  --pad: clamp(20px, 5vw, 72px);
+  --radius: 14px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; scroll-padding-top: 76px; }
+body{
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3{ font-family: var(--serif); font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; }
+p{ margin: 0; }
+a{ color: inherit; text-decoration: none; }
+button,input,select,textarea{ font: inherit; color: inherit; }
+button{ cursor: pointer; background: none; border: 0; }
+button:disabled{ cursor: not-allowed; opacity: .5; }
+img{ display: block; width: 100%; }
+[hidden]{ display: none !important; }
+:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce){ *,*::before,*::after{ transition: none !important; scroll-behavior: auto !important; } }
+
+.wrap{ max-width: 1280px; margin: 0 auto; padding-inline: var(--pad); }
+.eyebrow{ font: 700 10.5px var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.muted{ color: var(--muted); }
+
+/* Botones -------------------------------------------------------------- */
+.btn{
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 12px 22px; border-radius: 999px;
+  font: 700 12.5px var(--sans); letter-spacing: .02em;
+  background: var(--gold); color: #1c1407; border: 1px solid var(--gold);
+  transition: transform .18s ease, background .18s ease;
+}
+.btn:hover{ transform: translateY(-2px); background: #ddc08c; }
+.btn.outline{ background: transparent; color: var(--gold); }
+.btn.outline:hover{ background: var(--gold-soft); }
+.btn.ghost{ background: rgba(255,255,255,0.05); color: var(--text); border-color: var(--line); }
+.btn.ghost:hover{ background: rgba(255,255,255,0.09); }
+
+.skip{ position: absolute; top: -70px; left: 12px; background: var(--gold); color: #1c1407; padding: 10px 14px; border-radius: 8px; z-index: 99; }
+.skip:focus{ top: 12px; }
+
+/* ----------------------------------------------------------------------
+   Encabezado — minimalista: marca, buscador y "Mi lista"
+   ---------------------------------------------------------------------- */
+.site-header{
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(12,13,16,0.88); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.nav{ position: relative; display: flex; align-items: center; gap: 22px; min-height: 72px; }
+.brand{ font: 400 28px var(--serif); letter-spacing: .14em; white-space: nowrap; }
+.brand::before{ content: '◇'; color: var(--gold); margin-right: 10px; font-size: .7em; }
+.nav-links{ display: flex; gap: 20px; font-size: 12.5px; color: var(--muted); }
+.nav-links a:hover{ color: var(--gold); }
+.nav-right{ margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.icon-btn{ width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-size: 17px; border: 1px solid transparent; }
+.icon-btn:hover{ border-color: var(--line); background: rgba(255,255,255,0.05); }
+.fav-toggle{ display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--gold); white-space: nowrap; padding: 8px 12px; border-radius: 999px; }
+.fav-toggle:hover{ background: var(--gold-soft); }
+.menu-btn{ display: none; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 18px; }
+.mobile-menu{ padding: 14px var(--pad) 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+
+.search-panel{
+  position: absolute; top: 100%; left: 0; right: 0;
+  background: var(--panel); border-bottom: 1px solid var(--line);
+  padding: 14px var(--pad); display: flex; align-items: center; gap: 10px;
+}
+.search-panel input{ flex: 1; background: transparent; border: 0; border-bottom: 1px solid var(--line); outline: 0; color: var(--text); padding: 8px 2px; font-size: 15px; }
+.search-panel input:focus{ border-color: var(--gold); }
+
+@media (max-width: 760px){
+  .nav-links{ display: none; }
+  .menu-btn{ display: block; }
+}
+
+/* ----------------------------------------------------------------------
+   Hero — breve, sin fichas de inscripción, solo invitación a explorar
+   ---------------------------------------------------------------------- */
+.hero{
+  position: relative; overflow: hidden; min-height: 54vh;
+  display: flex; align-items: center;
+  background:
+    radial-gradient(ellipse 60% 55% at 78% 15%, rgba(92,36,48,0.38), transparent 60%),
+    radial-gradient(ellipse 65% 60% at 12% 90%, rgba(201,165,103,0.12), transparent 65%),
+    var(--ink);
+}
+.hero .wrap{ padding-block: 56px; max-width: 760px; }
+.hero h1{ font-size: clamp(36px, 5.4vw, 62px); margin: 16px 0 16px; letter-spacing: -.01em; }
+.hero h1 em{ font-style: italic; color: var(--gold); }
+.hero p.lead{ max-width: 52ch; color: #cfc9cb; font-size: 15.5px; line-height: 1.7; }
+.hero-actions{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+
+/* ----------------------------------------------------------------------
+   Catálogo — filas tipo carrusel, una por categoría
+   ---------------------------------------------------------------------- */
+.disclaimer-line{ font-size: 11.5px; color: var(--muted); padding-top: 26px; }
+.disclaimer-line strong{ color: var(--gold); font-weight: 600; }
+
+.row{ padding-block: 22px; }
+.row-head{ display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+.row-head h2{ font-size: clamp(19px, 2.2vw, 23px); }
+.row-nav{ display: flex; gap: 6px; }
+.scroll-btn{ width: 32px; height: 32px; border-radius: 50%; background: var(--panel-2); border: 1px solid var(--line); font-size: 16px; }
+.scroll-btn:hover{ background: var(--panel); border-color: var(--gold); }
+
+.carousel{ display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 3 * 18px) / 4); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 2px 10px; }
+.carousel::-webkit-scrollbar{ display: none; }
+.card{ scroll-snap-align: start; }
+
+.card-cover{ position: relative; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; background: var(--panel-2); border: 1px solid var(--line); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.card-cover img{ width: 100%; height: 100%; object-fit: cover; }
+.card:hover .card-cover{ transform: scale(1.045); box-shadow: 0 20px 44px -18px rgba(0,0,0,0.65); border-color: rgba(201,165,103,0.4); z-index: 2; }
+
+.card-fallback{
+  position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 10px; padding: 20px;
+  background:
+    radial-gradient(ellipse at top, rgba(255,255,255,0.08), transparent 70%),
+    var(--fb-bg, var(--panel-2));
+}
+.card-fallback .mark{ font: 56px var(--serif); color: var(--fb-ink, var(--gold)); line-height: 1; opacity: .9; }
+.card-fallback .name{ font: 400 24px var(--serif); color: var(--fb-ink, var(--text)); }
+.card-cover:has(img:not([hidden])) .card-fallback{ display: none; }
+
+.card-shade{ position: absolute; inset: 42% 0 0; background: linear-gradient(0deg, rgba(5,6,8,0.92), transparent); pointer-events: none; }
+.card-label{ position: absolute; left: 14px; right: 12px; bottom: 12px; pointer-events: none; }
+.card-label strong{ font: 400 clamp(18px,2.2vw,24px) var(--serif); }
+.card-flag{ position: absolute; top: 10px; left: 10px; background: rgba(12,13,16,0.85); border: 1px solid var(--line); color: var(--gold); padding: 4px 9px; border-radius: 5px; font: 700 9px var(--sans); letter-spacing: .08em; }
+.card-heart{
+  position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(12,13,16,0.85); border: 1px solid var(--line); display: grid; place-items: center; font-size: 18px; z-index: 2;
+}
+.card-heart[aria-pressed="true"]{ background: var(--gold); color: #1c1407; border-color: var(--gold); }
+.card-open{ position: absolute; inset: 0; z-index: 1; font-size: 0; }
+
+.card-info{ margin-top: 10px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.card-info h3{ font: 500 14px var(--sans); }
+.card-info p{ font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+.card-detail{ font-size: 17px; color: var(--gold); flex-shrink: 0; }
+
+.coming-soon{
+  border: 1px dashed var(--line); border-radius: var(--radius); padding: 28px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+}
+.coming-soon .mark{ font: 36px var(--serif); color: var(--gold); }
+.coming-soon h3{ font-size: 18px; margin-bottom: 4px; }
+.coming-soon p{ color: var(--muted); font-size: 12.5px; max-width: 44ch; }
+
+.empty-fav{ border: 1px dashed var(--line); border-radius: var(--radius); padding: 18px 22px; color: var(--muted); font-size: 12.5px; }
+.empty-fav span{ display: block; font-size: 24px; color: var(--gold); margin-bottom: 6px; }
+
+.no-results{ text-align: center; padding: 60px 20px; color: var(--muted); }
+.no-results h2{ font-size: 28px; color: var(--text); margin-bottom: 10px; }
+
+/* ----------------------------------------------------------------------
+   Cuéntanos qué imaginas — una sola caja, sin pasos ni selects
+   ---------------------------------------------------------------------- */
+.contact{ background: var(--panel); border-top: 1px solid var(--line); }
+.contact .wrap{ padding-block: 56px; }
+.contact .intro{ max-width: 620px; margin-bottom: 26px; }
+.contact .intro h2{ font-size: clamp(26px, 3.4vw, 36px); margin: 10px 0 10px; }
+.contact .intro p{ color: var(--muted); font-size: 14px; }
+
+.msg-form{ max-width: 620px; }
+.msg-form .field{ margin-bottom: 14px; }
+.msg-form label{ display: block; font-size: 11px; color: var(--gold); font-weight: 600; margin-bottom: 7px; }
+.msg-form input, .msg-form textarea{
+  width: 100%; background: var(--ink); border: 1px solid var(--line); color: var(--text);
+  border-radius: 10px; padding: 13px 14px; font-size: 14px; min-height: 46px;
+}
+.msg-form textarea{ min-height: 140px; resize: vertical; }
+.msg-form .hint{ font-size: 11.5px; color: var(--muted); margin-top: 12px; }
+
+/* ----------------------------------------------------------------------
+   Footer
+   ---------------------------------------------------------------------- */
+.site-footer{ padding-block: 34px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.site-footer p{ font-size: 11px; color: var(--muted); margin-top: 6px; }
+.lab-credit{ border: 1px solid rgba(201,165,103,0.25); border-radius: 8px; padding: 12px 18px; display: flex; align-items: center; gap: 11px; }
+.lab-credit .mark{ font: 32px var(--serif); color: var(--gold); }
+.lab-credit strong{ font-size: 12px; display: block; }
+.lab-credit small{ font-size: 9px; color: var(--muted); letter-spacing: .06em; }
+
+/* ----------------------------------------------------------------------
+   Modal de vista previa (estilo "ficha" Netflix) y toast
+   ---------------------------------------------------------------------- */
+dialog{ max-width: 720px; width: calc(100% - 28px); max-height: 90dvh; overflow: auto; border: 1px solid rgba(201,165,103,0.3); background: var(--panel); color: var(--text); border-radius: 16px; padding: 0; }
+dialog::backdrop{ background: rgba(4,4,6,0.9); backdrop-filter: blur(8px); }
+.modal-hero{ height: 280px; position: relative; background: var(--panel-2); }
+.modal-hero img{ height: 100%; object-fit: cover; }
+.modal-body{ padding: 28px; }
+.modal-body h2{ font-size: 36px; margin: 10px 0; }
+.modal-body p{ color: var(--muted); font-size: 13.5px; }
+.modal-close{ position: absolute; z-index: 5; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: rgba(12,13,16,0.85); border: 1px solid var(--line); color: var(--text); font-size: 18px; }
+.modal-actions{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.toast{ position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 90; background: var(--gold); color: #1c1407; padding: 12px 22px; border-radius: 999px; font-size: 12.5px; font-weight: 600; box-shadow: 0 14px 34px rgba(0,0,0,0.5); max-width: 90vw; text-align: center; }
+
+@media (max-width: 600px){
+  .carousel{ grid-auto-columns: 62%; gap: 14px; margin-right: calc(-1 * var(--pad)); padding-right: var(--pad); }
+  .row-nav{ display: none; }
+  .modal-hero{ height: 220px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#catalogo">Ir al catálogo</a>
+
+<!-- ======================= Encabezado ======================= -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">ÉVORA</a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="searchToggle" type="button" aria-label="Buscar" aria-expanded="false">⌕</button>
+      <button class="fav-toggle" id="goFav" type="button">♡ Mi lista <span id="favCountNav">0/15</span></button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+    <div class="search-panel" id="searchPanel" hidden>
+      <span style="color:var(--gold)">⌕</span>
+      <input type="search" id="search" placeholder="Buscar una invitación" aria-label="Buscar invitación">
+      <button class="icon-btn" id="searchClose" type="button" aria-label="Cerrar búsqueda">✕</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#contacto">Contáctanos</a>
+  </div>
+</header>
+
+<main>
+<!-- ======================= Hero ======================= -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <p class="eyebrow">ÉVORA · INVITACIONES DIGITALES</p>
+    <h1>Tu historia merece<br>una entrada <em>inolvidable.</em></h1>
+    <p class="lead">Explora el catálogo, guarda lo que te gusta y cuéntanos tu idea. Diseño a la medida, demos reales, nada de plantillas genéricas.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#catalogo">Explorar el catálogo</a>
+      <a class="btn ghost" href="#contacto">Contarles mi idea</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= Catálogo ======================= -->
+<section id="catalogo" aria-label="Catálogo">
+  <div class="wrap">
+    <p class="disclaimer-line"><strong>Catálogo de demostración.</strong> Nombres, fechas y lugares son ficticios — son muestras para inspirar tu propio proyecto.</p>
+
+    <!-- Mi lista -->
+    <section class="row" id="myFavoritesRow" aria-labelledby="favTitle">
+      <div class="row-head">
+        <h2 id="favTitle">Mi lista <span class="muted" id="favCount" style="font-family:var(--sans);font-size:13px">0/15</span></h2>
+        <div class="row-nav">
+          <button class="scroll-btn" data-scroll="favorites" data-dir="-1" aria-label="Anterior">‹</button>
+          <button class="scroll-btn" data-scroll="favorites" data-dir="1" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+      <div class="carousel" id="favorites" hidden></div>
+      <p class="empty-fav" id="favEmpty"><span>♡</span>Toca el corazón en cualquier diseño para guardarlo aquí (hasta 15).</p>
+    </section>
+
+    <div id="collections"></div>
+    <div class="wrap no-results" id="noResults" hidden>
+      <h2>No encontramos invitaciones</h2>
+      <p>Prueba otra búsqueda.</p>
+      <button class="btn outline" id="resetSearch" style="margin-top:16px">Ver catálogo completo</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= Cuéntanos qué imaginas ======================= -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="intro">
+      <p class="eyebrow">Tu historia empieza aquí</p>
+      <h2>Cuéntanos qué imaginas.</h2>
+      <p>Escríbelo con tus palabras — tipo de evento, fecha, estilo, ideas. Nosotros nos encargamos del resto.</p>
+    </div>
+    <form class="msg-form" id="msgForm">
+      <div class="field">
+        <label for="name">Tu nombre (opcional)</label>
+        <input id="name" name="name" placeholder="¿Cómo te llamas?">
+      </div>
+      <div class="field">
+        <label for="msg">Cuéntanos tu idea *</label>
+        <textarea id="msg" name="message" required placeholder="Ej. Es para el XV años de mi hija, el 14 de marzo. Me gustan los tonos rosa y dorado..."></textarea>
+      </div>
+      <button type="submit" class="btn">Enviar por WhatsApp →</button>
+      <p class="hint" id="submitHint">Al enviar, se abrirá WhatsApp con tu mensaje listo para mandarnos. No se realiza ningún cargo.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ======================= Footer ======================= -->
+<footer class="wrap site-footer">
+  <div>
+    <a class="brand" href="#inicio" style="font-size:22px">ÉVORA</a>
+    <p>Invitaciones digitales · Cada historia merece una entrada inolvidable.</p>
+    <p>© <span id="year"></span> ÉVORA. Todos los derechos reservados.</p>
+  </div>
+  <div class="lab-credit">
+    <span class="mark">∞</span>
+    <div><strong>Infinity AI Lab</strong><small>CREATIVE TECHNOLOGY STUDIO</small></div>
+  </div>
+</footer>
+
+<!-- ======================= Modal de vista previa ======================= -->
+<dialog id="preview">
+  <div class="modal-hero" id="previewImage"></div>
+  <button class="modal-close" data-close="preview" aria-label="Cerrar">✕</button>
+  <div class="modal-body">
+    <p class="eyebrow" id="previewCategory"></p>
+    <h2 id="previewTitle"></h2>
+    <p id="previewDescription"></p>
+    <div class="modal-actions">
+      <a class="btn" href="#" target="_blank" rel="noopener" id="openDemo">▷ Ver demo real</a>
+      <button class="btn outline" id="previewFav" type="button">♡ Guardar</button>
+      <button class="btn ghost" id="wantThis" type="button">✎ Quiero este estilo</button>
+    </div>
+    <p class="hint">Demostración con datos de ejemplo — no corresponde a un evento real.</p>
+  </div>
+</dialog>
+
+<dialog id="limitDialog">
+  <div class="modal-body">
+    <button class="modal-close" data-close="limitDialog" aria-label="Cerrar">✕</button>
+    <p class="eyebrow">Tu lista</p>
+    <h2>¡Tu lista está completa!</h2>
+    <p>Puedes guardar hasta 15 invitaciones. Quita una para agregar otra.</p>
+    <div class="modal-actions">
+      <button class="btn" id="viewFavs">Ver mi lista</button>
+      <button class="btn ghost" data-close="limitDialog">Entendido</button>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+'use strict';
+
+/* ========================================================================
+   CONFIGURACIÓN — edita aquí sin tocar el resto del código
+   ======================================================================== */
+const CONFIG = {
+  // Número de WhatsApp de negocio, formato internacional solo con dígitos.
+  // 52 (México) + 1 (requerido por WhatsApp para celulares mexicanos) + 10 dígitos.
+  // Si el enlace abre el chat equivocado, quita el "1" y deja 52 + los 10 dígitos.
+  whatsapp: '5213223058485',
+};
+
+const BASE = 'https://infinity-ai-agency.github.io/';
+
+/* ------------------------------------------------------------------------
+   CATÁLOGO
+   ------------------------------------------------------------------------ */
+const CATALOG = [
+  {
+    id: 'plata', category: 'bodas', isNew: false,
+    title: 'Elena & Alejandro', subtitle: 'Bodas de plata · Renovación de votos',
+    description: '25 años, un mismo amor. Una invitación de colección para celebrar una historia que se sigue escribiendo.',
+    url: BASE + 'Promesa-de-plata/', image: 'covers/plata.jpg',
+  },
+  {
+    id: 'royal-burgundy', category: 'bodas', isNew: true,
+    title: 'Valeria & Sebastián', subtitle: 'Boda · Elegancia en borgoña y oro',
+    description: 'Una celebración de inspiración clásica y lujo contemporáneo: tonos borgoña, detalles dorados y una apertura memorable.',
+    url: BASE + 'Boda-invitacion-dorada/', image: 'covers/royal-burgundy.jpg',
+  },
+  {
+    id: 'jardin', category: 'bodas', isNew: false,
+    title: 'Andrea & Santiago', subtitle: 'Boda · Romance natural',
+    description: 'Una historia para siempre, contada con elegancia natural y delicados detalles botánicos.',
+    url: BASE + 'Boda-invitacion/', image: 'covers/jardin.jpg',
+  },
+  // Nota: estos tres usan personajes con derechos de autor en la demo real
+  // (Marvel, Sanrio y la película de Sony/Netflix "KPop Demon Hunters").
+  // Por eso aquí los describimos de forma genérica y sin su arte — la demo
+  // original no se modificó, pero no conviene promoverla con el nombre o la
+  // imagen del personaje.
+  {
+    id: 'ironman', category: 'infantiles', isNew: false,
+    title: 'Mateo cumple 7', subtitle: 'Cumpleaños infantil · Misión de súper equipo',
+    description: 'Una tarde de juegos, retos y sorpresas para reunir al mejor equipo de pequeños héroes.',
+    url: BASE + 'Iron-man-invitacion/', bg: '#3a1a1c', ink: '#f0c27e', art: '✦',
+  },
+  {
+    id: 'luna-kpop', category: 'infantiles', isNew: true,
+    title: 'Luna cumple 4', subtitle: 'Cumpleaños infantil · Fiesta de estrellas y color',
+    description: 'Música, brillo y mucha magia para celebrar a nuestra pequeña estrella.',
+    url: BASE + 'Invitaci-n-cumple/', bg: '#2a1240', ink: '#e8b3e8', art: '★',
+  },
+  {
+    id: 'kitty', category: 'infantiles', isNew: false,
+    title: 'Cumpleaños de Valentina', subtitle: 'Cumpleaños infantil · Dulce y tierno',
+    description: 'Una invitación llena de ternura, color rosa y mucha dulzura.',
+    url: BASE + 'Hello-kitty-invitacion/', bg: '#45202f', ink: '#f3c3d4', art: '♡',
+  },
+];
+
+const CATEGORIES = {
+  bodas:      { label: 'Bodas que enamoran' },
+  xv:         { label: 'XV años inolvidables' },
+  infantiles: { label: 'Pequeñas grandes fiestas' },
+  juveniles:  { label: 'Juveniles' },
+  bautizos:   { label: 'Bautizos' },
+};
+
+/* ------------------------------------------------------------------------
+   Utilidades
+   ------------------------------------------------------------------------ */
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+const STORAGE_KEY = 'evora-favorites-v1';
+const MAX_FAVORITES = 15;
+
+let searchTerm = '';
+let activePreviewId = null;
+let toastTimer;
+
+let favorites = [];
+try {
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  if (Array.isArray(saved)) favorites = [...new Set(saved.filter((id) => CATALOG.some((d) => d.id === id)))].slice(0, MAX_FAVORITES);
+} catch (e) { /* localStorage no disponible — seguimos sin favoritos */ }
+
+function saveFavorites() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites)); } catch (e) {}
+}
+
+function showToast(message) {
+  $('toast').textContent = message;
+  $('toast').hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { $('toast').hidden = true; }, 3200);
+}
+
+function toggleFavorite(id) {
+  if (favorites.includes(id)) {
+    favorites = favorites.filter((x) => x !== id);
+  } else if (favorites.length >= MAX_FAVORITES) {
+    $('limitDialog').showModal();
+    return;
+  } else {
+    favorites.push(id);
+  }
+  saveFavorites();
+  renderCatalog();
+  syncPreviewFavButton();
+}
+
+/* ------------------------------------------------------------------------
+   Render del catálogo
+   ------------------------------------------------------------------------ */
+function designCover(d) {
+  const image = d.image
+    ? `<img src="${esc(d.image)}" alt="Portada de ${esc(d.title)}" loading="lazy" onerror="this.hidden=true">`
+    : '';
+  const isFav = favorites.includes(d.id);
+  return `
+    <div class="card-cover" style="--fb-bg:${esc(d.bg || '')};--fb-ink:${esc(d.ink || '')}">
+      <div class="card-fallback"><span class="mark">${esc(d.art || '◇')}</span><span class="name">${esc(d.title)}</span></div>
+      ${image}
+      <div class="card-shade"></div>
+      <div class="card-label"><strong>${esc(d.title)}</strong></div>
+      ${d.isNew ? '<span class="card-flag">NUEVA</span>' : ''}
+      <button class="card-heart" data-fav="${esc(d.id)}" aria-pressed="${isFav}" aria-label="${isFav ? 'Quitar de mi lista' : 'Agregar a mi lista'}">${isFav ? '♥' : '♡'}</button>
+      <button class="card-open" data-open="${esc(d.id)}" aria-label="Ver detalles de ${esc(d.title)}">Ver detalles</button>
+    </div>`;
+}
+
+function designCard(d) {
+  return `
+    <article class="card">
+      ${designCover(d)}
+      <div class="card-info">
+        <div><h3>${esc(d.title)}</h3><p>${esc(d.subtitle)}</p></div>
+        <button class="card-detail" data-open="${esc(d.id)}" aria-label="Ver descripción">↗</button>
+      </div>
+    </article>`;
+}
+
+function categoryGroup(categoryId, items) {
+  const info = CATEGORIES[categoryId];
+  if (!items.length) {
+    return `
+      <section class="wrap row" aria-labelledby="title-${categoryId}">
+        <div class="row-head"><h2 id="title-${categoryId}">${esc(info.label)}</h2></div>
+        <div class="coming-soon">
+          <span class="mark">✧</span>
+          <div style="flex:1;min-width:220px"><h3>Próximamente en esta categoría</h3><p>Todavía no tenemos una demo pública aquí. Cuéntanos qué imaginas y la diseñamos contigo.</p></div>
+          <a class="btn outline" href="#contacto">Contarles mi idea →</a>
+        </div>
+      </section>`;
+  }
+  return `
+    <section class="wrap row" aria-labelledby="title-${categoryId}">
+      <div class="row-head">
+        <h2 id="title-${categoryId}">${esc(info.label)}</h2>
+        <div class="row-nav">
+          <button class="scroll-btn" data-scroll="row-${categoryId}" data-dir="-1" aria-label="Anterior">‹</button>
+          <button class="scroll-btn" data-scroll="row-${categoryId}" data-dir="1" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+      <div class="carousel" id="row-${categoryId}">${items.map(designCard).join('')}</div>
+    </section>`;
+}
+
+function renderCatalog() {
+  const term = searchTerm.trim().toLocaleLowerCase('es');
+  const categoryIds = Object.keys(CATEGORIES);
+
+  if (term) {
+    // Modo búsqueda: solo categorías con resultados, sin "próximamente", sin Mi lista.
+    $('myFavoritesRow').hidden = true;
+    const filtered = CATALOG.filter((d) =>
+      [d.title, d.subtitle, d.description, d.category].join(' ').toLocaleLowerCase('es').includes(term)
+    );
+    $('collections').innerHTML = categoryIds
+      .map((cat) => ({ cat, items: filtered.filter((d) => d.category === cat) }))
+      .filter((g) => g.items.length)
+      .map((g) => categoryGroup(g.cat, g.items))
+      .join('');
+    $('noResults').hidden = filtered.length > 0;
+    return;
+  }
+
+  // Modo normal: Mi lista + todas las categorías (con "próximamente" si vacías).
+  $('myFavoritesRow').hidden = false;
+  $('noResults').hidden = true;
+  $('collections').innerHTML = categoryIds
+    .map((cat) => categoryGroup(cat, CATALOG.filter((d) => d.category === cat)))
+    .join('');
+
+  const savedDesigns = favorites.map((id) => CATALOG.find((d) => d.id === id)).filter(Boolean);
+  $('favorites').innerHTML = savedDesigns.map(designCard).join('');
+  $('favorites').hidden = savedDesigns.length === 0;
+  $('favEmpty').hidden = savedDesigns.length > 0;
+  $('favCount').textContent = $('favCountNav').textContent = `${favorites.length}/${MAX_FAVORITES}`;
+}
+
+/* ------------------------------------------------------------------------
+   Modal de vista previa
+   ------------------------------------------------------------------------ */
+function syncPreviewFavButton() {
+  if (!activePreviewId) return;
+  $('previewFav').textContent = favorites.includes(activePreviewId) ? '♥ Guardado' : '♡ Guardar';
+}
+
+function openPreview(id) {
+  const d = CATALOG.find((x) => x.id === id);
+  if (!d) return;
+  activePreviewId = id;
+  const image = d.image ? `<img src="${esc(d.image)}" alt="${esc(d.title)}" onerror="this.hidden=true">` : '';
+  $('previewImage').style.background = d.bg || 'var(--panel-2)';
+  $('previewImage').innerHTML = image;
+  $('previewCategory').textContent = d.subtitle;
+  $('previewTitle').textContent = d.title;
+  $('previewDescription').textContent = d.description;
+  $('openDemo').hidden = !d.url;
+  $('openDemo').href = d.url || '#';
+  syncPreviewFavButton();
+  $('preview').showModal();
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast('Copiado al portapapeles');
+  } catch (e) {
+    const tmp = document.createElement('textarea');
+    tmp.value = text;
+    document.body.append(tmp);
+    tmp.select();
+    try { document.execCommand('copy'); showToast('Copiado'); }
+    catch (e2) { showToast('Selecciona y copia el texto manualmente'); }
+    tmp.remove();
+  }
+}
+
+/* ------------------------------------------------------------------------
+   Eventos
+   ------------------------------------------------------------------------ */
+document.addEventListener('click', (e) => {
+  const fav = e.target.closest('[data-fav]');
+  if (fav) { toggleFavorite(fav.dataset.fav); return; }
+
+  const opener = e.target.closest('[data-open]');
+  if (opener) { openPreview(opener.dataset.open); return; }
+
+  const scroller = e.target.closest('[data-scroll]');
+  if (scroller) {
+    const row = $(scroller.dataset.scroll);
+    if (row) row.scrollBy({ left: row.clientWidth * 0.8 * Number(scroller.dataset.dir), behavior: 'smooth' });
+    return;
+  }
+
+  const closeBtn = e.target.closest('[data-close]');
+  if (closeBtn) { $(closeBtn.dataset.close).close(); return; }
+
+  if (e.target.closest('#mobileMenu a')) {
+    $('mobileMenu').hidden = true;
+    $('menuBtn').setAttribute('aria-expanded', 'false');
+  }
+});
+
+$('search').addEventListener('input', (e) => { searchTerm = e.target.value; renderCatalog(); });
+$('resetSearch').addEventListener('click', () => { searchTerm = ''; $('search').value = ''; closeSearch(); renderCatalog(); });
+$('goFav').addEventListener('click', () => { $('catalogo').scrollIntoView({ behavior: 'smooth' }); });
+
+function openSearch() {
+  $('searchPanel').hidden = false;
+  $('searchToggle').setAttribute('aria-expanded', 'true');
+  $('search').focus();
+}
+function closeSearch() {
+  $('searchPanel').hidden = true;
+  $('searchToggle').setAttribute('aria-expanded', 'false');
+}
+$('searchToggle').addEventListener('click', () => { $('searchPanel').hidden ? openSearch() : closeSearch(); });
+$('searchClose').addEventListener('click', () => { searchTerm = ''; $('search').value = ''; closeSearch(); renderCatalog(); });
+
+$('menuBtn').addEventListener('click', () => {
+  const menu = $('mobileMenu');
+  menu.hidden = !menu.hidden;
+  $('menuBtn').setAttribute('aria-expanded', String(!menu.hidden));
+});
+
+$('previewFav').addEventListener('click', () => toggleFavorite(activePreviewId));
+$('wantThis').addEventListener('click', () => {
+  const d = CATALOG.find((x) => x.id === activePreviewId);
+  if (d) $('msg').value = `Me interesa el estilo «${d.title}». `;
+  $('preview').close();
+  $('contacto').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => $('msg').focus(), 400);
+});
+$('viewFavs').addEventListener('click', () => { $('limitDialog').close(); $('catalogo').scrollIntoView({ behavior: 'smooth' }); });
+document.querySelectorAll('dialog').forEach((d) => d.addEventListener('click', (e) => { if (e.target === d) d.close(); }));
+
+/* ------------------------------------------------------------------------
+   Caja de contacto — un solo mensaje, directo a WhatsApp
+   ------------------------------------------------------------------------ */
+$('msgForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const name = (data.get('name') || '').trim();
+  const text = (data.get('message') || '').trim();
+  if (!text) return;
+
+  const message = [
+    'Hola ÉVORA 👋', '',
+    name ? `Soy ${name}.` : 'Quiero platicar sobre una invitación.', '',
+    text, '',
+    'Enviado desde el catálogo ÉVORA.',
+  ].join('\n');
+
+  if (CONFIG.whatsapp) {
+    window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
+  } else {
+    copyText(message);
+    showToast('Mensaje copiado — pégalo donde prefieras enviarlo');
+  }
+  e.target.reset();
+});
+
+$('year').textContent = new Date().getFullYear();
+renderCatalog();
+</script>
+</body>
+</html>
