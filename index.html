@@ -480,7 +480,7 @@ const CATALOG = [
     id: 'ironman', category: 'infantiles', isNew: false,
     title: 'Mateo cumple 7', subtitle: 'Cumpleaños infantil · Misión de súper equipo',
     description: 'Una tarde de juegos, retos y sorpresas para reunir al mejor equipo de pequeños héroes.',
-    url: BASE + 'Iron-man-invitacion/', image: 'covers/ironman', bg: '#ffb347', ink: '#5a1d00', art: '✦',
+    url: BASE + 'Iron-man-invitacion/', image: 'covers/iron', bg: '#ffb347', ink: '#5a1d00', art: '✦',
   },
   {
     id: 'luna-kpop', category: 'infantiles', isNew: true,
@@ -492,7 +492,7 @@ const CATALOG = [
     id: 'kitty', category: 'infantiles', isNew: false,
     title: 'Cumpleaños de Valentina', subtitle: 'Cumpleaños infantil · Dulce y tierno',
     description: 'Una invitación llena de ternura, color rosa y mucha dulzura.',
-    url: BASE + 'Hello-kitty-invitacion/', image: 'covers/kitty', bg: '#ff9ec2', ink: '#6b0f3a', art: '♡',
+    url: BASE + 'Hello-kitty-invitacion/', image: 'covers/hello', bg: '#ff9ec2', ink: '#6b0f3a', art: '♡',
   },
 ];
 
@@ -551,15 +551,17 @@ function toggleFavorite(id) {
 /* ------------------------------------------------------------------------
    Render del catálogo
    ------------------------------------------------------------------------ */
-// Busca primero covers/<nombre>.webp; si no existe prueba .jpg; si tampoco, muestra la tarjeta de color.
+// Busca covers/<nombre>.webp, luego .WEBP (mayúsculas), luego .jpg; si no hay ninguna, muestra la tarjeta de color.
+const COVER_EXT = ['.webp', '.WEBP', '.jpg'];
 function coverFallback(img) {
-  if (!img.dataset.tried) { img.dataset.tried = '1'; img.src = img.src.replace(/\.webp$/, '.jpg'); }
+  const step = Number(img.dataset.step || 0) + 1;
+  if (step < COVER_EXT.length) { img.dataset.step = step; img.src = img.dataset.base + COVER_EXT[step]; }
   else { img.hidden = true; }
 }
 
 function designCover(d) {
   const image = d.image
-    ? `<img src="${esc(d.image)}.webp" alt="Portada de ${esc(d.title)}" loading="lazy" onerror="coverFallback(this)">`
+    ? `<img src="${esc(d.image)}.webp" data-base="${esc(d.image)}" alt="Portada de ${esc(d.title)}" loading="lazy" onerror="coverFallback(this)">`
     : '';
   const isFav = favorites.includes(d.id);
   return `
@@ -646,7 +648,7 @@ function openPreview(id) {
   const d = CATALOG.find((x) => x.id === id);
   if (!d) return;
   activePreviewId = id;
-  const image = d.image ? `<img src="${esc(d.image)}.webp" alt="${esc(d.title)}" onerror="coverFallback(this)">` : '';
+  const image = d.image ? `<img src="${esc(d.image)}.webp" data-base="${esc(d.image)}" alt="${esc(d.title)}" onerror="coverFallback(this)">` : '';
   $('previewImage').style.background = d.bg || 'var(--panel-2)';
   $('previewImage').innerHTML = image;
   $('previewCategory').textContent = d.subtitle;
